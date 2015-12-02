@@ -9,5 +9,10 @@
 	</head>
 	<body>
 		<h1>Login do usuário</h1>
+		<form action="LoginServlet.do" method="POST">
+			<input type="text" name="nome">
+			<input type="password" name="senha">
+			<input type="submit" value="Enviar">
+		</form>
 	</body>
 </html>

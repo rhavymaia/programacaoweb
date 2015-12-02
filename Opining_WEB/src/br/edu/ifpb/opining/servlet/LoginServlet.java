@@ -10,23 +10,19 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/LoginServlet")
+@WebServlet("/LoginServlet.do")
 public class LoginServlet extends HttpServlet {
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String nome = request.getParameter("nome");
+		String senha = request.getParameter("senha");
+		
+		// Consultar na base de dados.
+		
 	}
 
 }
