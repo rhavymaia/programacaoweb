@@ -6,7 +6,6 @@ import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,6 +23,22 @@ public class ServicoServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		// Tipo e codificação do conteúdo de resposta.
+		response.setContentType("application/json");
+		response.setCharacterEncoding("utf-8");
+		
+		PrintWriter pw = response.getWriter();
+		pw.write("{'nome':'Kamila de Farias'}");
+		pw.close();		
+	}
+	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,11 +60,16 @@ public class ServicoServlet extends HttpServlet {
 		String nome = json.getString("nome");
 		String senha = json.getString("senha");		
 
+		// Tipo e codificação do conteúdo de resposta.
+		response.setContentType("application/json");
+		response.setCharacterEncoding("utf-8");
+		
+		// Conteúdo de resposta.
 		PrintWriter pw = response.getWriter();
 		
 		if (nome.toLowerCase().trim().equals("fulano") 
 				&& senha.trim().equals("123")) {			
-			
+			// Caso verdadeiro.
 			try {
 				
 				pw.write("{'key': '" + criptografarSha256("IFPB") + "'}");
@@ -57,13 +77,15 @@ public class ServicoServlet extends HttpServlet {
 				
 			} catch (NoSuchAlgorithmException e) {
 				
-				e.printStackTrace();
+				response.setStatus(500);
+				pw.write("{'mensagem': 'Problema interno ao servidor.'}");
 			}			
 			
 		} else {
 			
+			// Caso falso.
 			response.setStatus(500);
-			pw.write("{'mensagem': 'Usuário ou senha incorretos'}");
+			pw.write("{'mensagem': 'Usuário ou senha incorretos.'}");
 		}	
 
 		pw.close();
