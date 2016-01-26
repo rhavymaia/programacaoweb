@@ -32,15 +32,22 @@ public class PessoaDAO implements GenericDAO<Integer, Pessoa>{
 	}
 
 	@Override
-	public int insert(Pessoa entity) throws SQLException {
+	public int insert(Pessoa pessoa) throws SQLException {
 		
 		Integer id = BancoUtil.IDVAZIO;
 		
 		try {
 			
-			String sql = "[DML-Inserção]";
+			// Considerar a tabela tb_pessoa composta dos campos: id (int) e nome (varchar).
+			String sql = "INSERT INTO tb_pessoa (" 
+					+ " id_pessoa,"
+					+ " nm_pessoa)"
+					+ " VALUES (?, ?)";
+			
 			PreparedStatement stmt = (PreparedStatement) connection.prepareStatement(sql);
-
+			stmt.setInt(1, pessoa.getId());
+			stmt.setString(2, pessoa.getNome());
+			
 			stmt.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS);
 
 			// Cadastra e recuperar identificação da Pessoa.
@@ -55,30 +62,6 @@ public class PessoaDAO implements GenericDAO<Integer, Pessoa>{
 	}
 
 	@Override
-	public void update(Pessoa entity) throws SQLException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int delete(Integer pk) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public List<Pessoa> getAll() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public List<Pessoa> find(Pessoa entity) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Pessoa getById(Integer id) throws SQLException {
 		
 		Pessoa pessoa = null;
@@ -89,7 +72,7 @@ public class PessoaDAO implements GenericDAO<Integer, Pessoa>{
 
 		try {
 
-			// Considerar a tabela tb_pessoa composta dos campos id (int) e nome (varchar).
+			// Considerar a tabela tb_pessoa composta dos campos: id (int) e nome (varchar).
 			String sql = "SELECT pessoa.id, pessoa.nome"
 					+ "FROM tb_pessoa AS pessoa"
 					+ "WHERE pessoa.id = " 
@@ -139,5 +122,29 @@ public class PessoaDAO implements GenericDAO<Integer, Pessoa>{
 		}
 
 		return pessoas;
+	}
+	
+	@Override
+	public void update(Pessoa entity) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int delete(Integer pk) throws SQLException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public List<Pessoa> getAll() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public List<Pessoa> find(Pessoa entity) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -2,6 +2,7 @@ package br.edu.ifpb.servlet;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,17 +27,25 @@ public class InicialServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+				
+		try {
+			
+			Pessoa pessoa1 = new Pessoa(1, "Matheus Vasconcelos");		
+			PessoaDAO.getInstance().insert(pessoa1);		
 		
-		PessoaDAO.getInstance();
+			Pessoa pessoa2 = new Pessoa(2, "Juan Barros");
+			PessoaDAO.getInstance().insert(pessoa2);
+			
+			List<Pessoa> pessoas = new ArrayList<Pessoa>();
+			pessoas.add(pessoa1);
+			pessoas.add(pessoa2);
+			
+			request.setAttribute("pessoas", pessoas);
 		
-		Pessoa pessoa1 = new Pessoa(1, "Matheus Vasconcelos");
-		Pessoa pessoa2 = new Pessoa(2, "Juan Barros");
-		
-		List<Pessoa> pessoas = new ArrayList<Pessoa>();
-		pessoas.add(pessoa1);
-		pessoas.add(pessoa2);
-		
-		request.setAttribute("pessoas", pessoas);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
 		
 		RequestDispatcher rq = request.getRequestDispatcher("index.jsp");
 		rq.forward(request, response);
