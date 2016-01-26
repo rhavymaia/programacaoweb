@@ -7,7 +7,7 @@
 	<head>
 		<meta http-equiv="Content-Type" 
 			content="text/html; charset=ISO-8859-1">
-		<title>Meu título</title>
+		<title>Pessoas</title>
 	</head>
 	<body>		
 		<c:forEach var="pessoa" items="${pessoas}">

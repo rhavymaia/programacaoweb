@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.edu.ifpb.dao.PessoaDAO;
 import br.edu.ifpb.entidade.Pessoa;
 
 /**
@@ -25,6 +26,8 @@ public class InicialServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		PessoaDAO.getInstance();
 		
 		Pessoa pessoa1 = new Pessoa(1, "Matheus Vasconcelos");
 		Pessoa pessoa2 = new Pessoa(2, "Juan Barros");
