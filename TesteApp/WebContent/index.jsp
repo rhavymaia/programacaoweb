@@ -10,8 +10,10 @@
 		<title>Meu título</title>
 	</head>
 	<body>		
-		<c:forEach var="esporte" items="${esportes}">
-			<h2>${esporte}</h2>
+		<c:forEach var="pessoa" items="${pessoas}">
+			<a href="BuscarUsuarioServlet?id=${pessoa.id}">
+				<h2>${pessoa.nome}</h2>
+			</a>
 		</c:forEach>
 	</body>
 </html>
