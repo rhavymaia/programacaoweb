@@ -23,9 +23,9 @@ public class ConnectionFactory {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			// Endereço do Banco, Usuário e Senha. Substituir: [BANCO], [USUARIO], [SENHA]
-			return DriverManager.getConnection("jdbc:mysql://localhost:3306/[BANCO]", 
-					"[USUARIO]", 
-					"[SENHA]");
+			return DriverManager.getConnection("jdbc:mysql://localhost:3306/test", 
+					"root", 
+					"ifpbinfo");
 			
 		} catch (SQLException | ClassNotFoundException e) {
 			
