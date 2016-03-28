@@ -1,0 +1,35 @@
+body { 
+ font-family: Verdana, Arial, Helvetica, sans-serif; 
+ font-size: 12px; 
+ margin: 0px; 
+} 
+
+#principal { 
+ width: 780px; 
+ margin: 0px auto; 
+}
+
+#cabecalho { 
+ background-color: #FF9933; 
+ height: 80px; 
+} 
+
+#menu{ 
+    padding: 10px; 
+    width: 210px; 
+    float: left; 
+    background-color: #BDBD9B; 
+}
+
+#conteudo{ 
+    padding: 10px; 
+    width: 520px; 
+    float: right; 
+    background-color: #E7E7DA; 
+}
+
+#rodape { 
+ background-color: #ffb03b; 
+ height: 30px; 
+ clear: both; 
+}
