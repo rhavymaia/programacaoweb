@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/index.css" rel="stylesheet" />
+		<link href="login_sign.js" rel="javascript" />
+	</head>
+	<body>
+	
+		<div id="box-div">
+			<div class="login-box">
+				<div class="lb-header">
+					<a href="#" class="active" id="login-box-link">Login</a> <a
+						href="signUpPage.html" id="signup-box-link">Cadastrar</a>
+				</div>
+				<div class="social-login">
+					<a href="#"> <i class="fa fa-facebook fa-lg"></i> Login com o
+						facebook
+					</a> <a href="#"> <i class="fa fa-google-plus fa-lg"></i> login com
+						o Google
+					</a>
+				</div>
+				<form name="formLogin" class="email-login" action="MeuPrimeiroServlet"
+					method="post">
+					<div class="u-form-group">
+						<input id="email" name="email" type="email" placeholder="Email"
+							required="required" />
+					</div>
+					<div class="u-form-group">
+						<input id="pass" name="pass" type="password"  placeholder="Senha"
+							required="required" />
+					</div>
+					<div class="u-form-group">
+						<input type="submit" value="Enviar"/>
+					</div>
+					<div class="u-form-group">
+						<a href="#" class="forgot-password">Esqueceu a senha?</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
