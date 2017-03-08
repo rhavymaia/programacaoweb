@@ -25,20 +25,13 @@ public class MeuPrimeiroServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		System.out.println("Meu servlet tá funfando!!");
-
-		// Parâmetros de entrada enviados pelo usuário.
-		String email = request.getParameter("email");
-		String senha = request.getParameter("pass");
-
-		// Entidade
-		Usuario usuario = new Usuario();
-		usuario.setEmail(email);
-		usuario.setSenha(senha);
-
-		// Entidade -> Json
+		
+		// Json -> Entidade
+		StringBuilder sb = lerRequestContentHTTP(request);
 		Gson gson = new Gson();
+		Usuario usuario = gson.fromJson(sb.toString(), Usuario.class);
+
+		// Entidade -> Json		
 		String json = gson.toJson(usuario);
 
 		// Resposta
@@ -46,5 +39,17 @@ public class MeuPrimeiroServlet extends HttpServlet {
 		PrintWriter pw = response.getWriter();
 		pw.write(json);
 		pw.close();
+	}
+	
+	public StringBuilder lerRequestContentHTTP(HttpServletRequest request) throws IOException {
+		
+		StringBuilder sb = new StringBuilder();
+        String s;
+        
+        while ((s = request.getReader().readLine()) != null) {
+            sb.append(s);
+        }
+        
+        return sb;
 	}
 }
