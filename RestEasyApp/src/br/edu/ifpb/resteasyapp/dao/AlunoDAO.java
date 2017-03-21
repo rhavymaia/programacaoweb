@@ -16,13 +16,11 @@ public class AlunoDAO extends GenericDao<Integer, Aluno>{
 	
 	@Override
 	public List<Aluno> getAll() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		return super.getAll("Aluno.getAll");
 	}
 
 	@Override
 	public Class<?> getEntityClass() {
-		// TODO Auto-generated method stub
 		return Aluno.class;
 	}
 
@@ -31,5 +29,4 @@ public class AlunoDAO extends GenericDao<Integer, Aluno>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }
