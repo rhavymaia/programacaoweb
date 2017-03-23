@@ -41,6 +41,19 @@ public class AlunoController {
 		//TODO: Regra de negócio e manipulação de dados nesse ponto. As informaçãos devem ser associadas
 		// nesse ponto ao biuld (response).
 		
+		try {
+			
+			int idAluno = AlunoDAO.getInstance().insert(aluno);
+			
+			aluno.setId(idAluno);
+			
+			builder.status(Response.Status.OK).entity(aluno);
+		
+		} catch (SQLException e) {
+			
+			builder.status(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+		
 		// Resposta.
 		return builder.build();
 	}

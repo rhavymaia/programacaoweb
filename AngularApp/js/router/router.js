@@ -1,6 +1,6 @@
-angulaAppModulo.config(function($routeProvider) {
+angulaAppModulo.config(function($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/home', {
+        .when('/', {
             templateUrl: 'home.html'
         })
         .when('/cadastro', {

@@ -5,5 +5,16 @@
             <h1>Cadastrar Aluno</h1>
         </div>
     </div>    
-
+    
+    <div class="row">
+        <form class="form-inline">
+            
+            <input type="text" ng-model="aluno.nome" placeholder="Nome" required>
+            <input type="text" ng-model="aluno.matricula" placeholder="Matrícula" required>
+            
+            <button class="btn btn-primary" ng-click="adicionarAluno()">
+                Adicionar Aluno
+            </button>            
+        </form>
+    </div>
 </div>

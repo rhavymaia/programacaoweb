@@ -2,12 +2,18 @@ angulaAppModulo.controller('alunoController', function (AlunoService, $scope) {
 
     $scope.alunos = [];
 
-    $scope.adicionaAluno = function () {
-        $scope.alunos.push({
-            id: $scope.aluno.id,
-            nome: $scope.aluno.nome,
-            matricula: $scope.aluno.matricula
-        });
+    $scope.adicionarAluno = function () {        
+        
+        AlunoService.cadastrarAluno($scope.aluno)
+            .then(function (response) {
+                // Chamado quando a resposta contém status de sucesso.
+                // Exibir no console o conteúdo da resposta.
+                console.log(response.data);
+                
+                // Criar aluno com o dado (Json) de resposta do servidor.
+                var aluno = response.data;
+                $scope.alunos.push(aluno);                
+            });
     };
 
     $scope.listarAlunos = function () {
@@ -18,6 +24,5 @@ angulaAppModulo.controller('alunoController', function (AlunoService, $scope) {
     };
 
     $scope.pesquisarAlunoPorNome = function () {
-
     };
 });

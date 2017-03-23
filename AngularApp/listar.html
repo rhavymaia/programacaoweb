@@ -1,22 +1,17 @@
 <div class="container" ng-controller="alunoController">
 
     <div class="row">
-        <form class="form-inline">            
-            <input type="number" ng-model="aluno.id" placeholder="Identificador" class="input-small" required>
-            <input type="text" ng-model="aluno.nome" placeholder="Nome" required>
-            <input type="text" ng-model="aluno.matricula" placeholder="Matrícula" required>
-            
-            <button class="btn btn-primary" ng-click="adicionaAluno()">Adicionar Aluno</button>
-            
-        </form>
-        
-        <button class="btn btn-primary" ng-click="listarAlunos()">Listar Alunos</button>
+        <div class="page-header">
+            <h1>Listar Alunos</h1>
+        </div>
     </div>
     
     <div class="row">
-        <div class="page-header">
-            <h1>Lista de Alunos</h1>
-        </div>
+            
+        <button class="btn btn-primary" ng-click="listarAlunos()">
+            Listar Aluno
+        </button>
+            
     </div>
 
     <div class="row">

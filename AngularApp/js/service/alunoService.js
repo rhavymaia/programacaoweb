@@ -7,7 +7,7 @@ angulaAppModulo.factory("AlunoService", function($http) {
     };
     
     var _cadastrarAluno = function(aluno){
-		return $http.post(urlBase + "/inserir", aluno)
+		return $http.post(urlBase + "/aluno/inserir", aluno)
 	};
 
     return {
