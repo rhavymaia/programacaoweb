@@ -1,11 +1,15 @@
 package br.edu.ifpb.resteasyapp.entidade;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,6 +20,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQuery(name = "Aluno.getAll", query = "from Aluno")
 public class Aluno {
 
+	// Identificador auto-incrementável.
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_aluno")
@@ -26,6 +31,10 @@ public class Aluno {
 	
 	@Column(name = "nm_matricula")
 	private String matricula;
+	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_endereco") // Criará uma FK na tabela tb_aluno.
+	private Endereco endereco;
 
 	@XmlElement
 	public Integer getId() {
@@ -52,5 +61,13 @@ public class Aluno {
 
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
+	}
+
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}	
 }
