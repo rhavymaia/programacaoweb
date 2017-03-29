@@ -88,7 +88,7 @@ public class AlunoController {
 	}
 	
 	/**
-	 * Recupera o alunos cadastrado no sistema através do seu id.
+	 * Recuperar o aluno cadastrado no sistema através do seu id.
 	 * 
 	 * @param idAluno
 	 * @return Response
@@ -113,6 +113,42 @@ public class AlunoController {
 				// As informaçãos associadas ao build para o response.
 				builder.status(Response.Status.OK);
 				builder.entity(aluno);
+				
+			} else {
+				
+				// Conteúdo não encontrado.
+				builder.status(Response.Status.NOT_FOUND);
+			}
+
+		} catch (SQLException exception) {
+
+			builder.status(Response.Status.INTERNAL_SERVER_ERROR);
+		}
+
+		// Resposta
+		return builder.build();
+	}
+	
+	@PermitAll
+	@GET
+	@Path("/listar/nome/{nome}")
+	@Produces("application/json")
+	public Response getAlunoByNome(@PathParam("nome") String nome) {
+		
+		// Preparando a resposta. Provisoriamente o sistema preparará a resposta como requisição incorreta.
+		ResponseBuilder builder = Response.status(Response.Status.BAD_REQUEST);
+		builder.expires(new Date());
+
+		try {
+			
+			// Consultar o aluno pelo nome. Consulta disponível na entidade AlunoDAO.
+			List<Aluno> alunos = AlunoDAO.getInstance().getByName(nome); 
+			
+			if (!alunos.isEmpty()) {
+				
+				// As informaçãos associadas ao build para o response.
+				builder.status(Response.Status.OK);
+				builder.entity(alunos);
 				
 			} else {
 				

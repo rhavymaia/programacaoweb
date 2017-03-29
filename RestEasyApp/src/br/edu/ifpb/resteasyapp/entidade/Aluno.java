@@ -26,6 +26,9 @@ public class Aluno {
 	@Column(name = "id_aluno")
 	private Integer id;
 	
+	@Column(name = "nm_email", unique=true)
+	private String email;
+	
 	@Column(name = "nm_aluno")
 	private String nome;
 	
