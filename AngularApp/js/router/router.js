@@ -1,12 +1,13 @@
-angulaAppModulo.config(function($routeProvider, $locationProvider) {
+angulaAppModulo.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
             templateUrl: 'home.html'
         })
-        .when('/cadastro', {
-            templateUrl: 'cadastro.html'
+        .when('/cadastrar', {
+            templateUrl: 'cadastrar.html'
         })
         .when('/listar', {
             templateUrl: 'listar.html'
-        });
+        })
+        .otherwise('/');
 });

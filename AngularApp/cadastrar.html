@@ -10,11 +10,15 @@
         <form class="form-inline">
             
             <input type="text" ng-model="aluno.nome" placeholder="Nome" required>
-            <input type="text" ng-model="aluno.matricula" placeholder="Matrícula" required>
+            <input type="text" ng-model="aluno.matricula" ng-keyup="addCampo()" placeholder="Matrícula" required>
             
             <button class="btn btn-primary" ng-click="adicionarAluno()">
                 Adicionar Aluno
             </button>            
         </form>
+        
+        <button class="btn btn-primary" ng-click="redirecionar()">
+            Redirecionar Aluno
+        </button> 
     </div>
 </div>

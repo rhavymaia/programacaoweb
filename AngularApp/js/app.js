@@ -1,1 +1,1 @@
-var angulaAppModulo = angular.module('AngularApp', ['ngRoute']);
+var angulaAppModulo = angular.module('AngularApp', ['ngRoute', 'ui.router']);

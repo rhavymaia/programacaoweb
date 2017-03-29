@@ -9,9 +9,14 @@ angulaAppModulo.factory("AlunoService", function($http) {
     var _cadastrarAluno = function(aluno){
 		return $http.post(urlBase + "/aluno/inserir", aluno)
 	};
+    
+    var _consultarAlunoByNome = function(nome){
+		return $http.post(urlBase + "/aluno/listar/nome/" + encodeURI(nome))
+	};
 
     return {
         listarAlunos: _listarAlunos,
-        cadastrarAluno: _cadastrarAluno
+        cadastrarAluno: _cadastrarAluno,
+        consultarAlunoByNome: _consultarAlunoByNome
     };
 });
