@@ -1,5 +1,7 @@
 angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $state) {
 
+    var TAMANHO_MINIMO_PESQUISA = 3;
+    
     $scope.alunos = [];
 
     $scope.adicionarAluno = function () {        
@@ -20,11 +22,28 @@ angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $s
     };
 
     $scope.pesquisarAlunoPorNome = function (nome) {
-        AlunoService.consultarAlunoByNome(nome)
-            .then(function (response) {
-                $scope.alunos = response.data;
-            });
+        
+        console.log("Nome: " + nome);
+        
+        if(nome.length > TAMANHO_MINIMO_PESQUISA) {
+            AlunoService.consultarAlunoByNome(nome)
+                .then(function (response) {
+                    $scope.alunos = response.data;
+                });
+        }        
     };
+    
+    $scope.limparFormulario = function() {
+        
+        // Reinicializa as variáveis nome e alunos.
+        $scope.nome = "";
+        angular.copy({}, $scope.alunos);
+        
+        // Reinicializa o estado do campo para os eventos e validação.
+        // É necessário indicar o atributo name no formulário <form>
+        $scope.formPesquisa.$setPristine();
+        $scope.formPesquisa.$setValidity();
+    }
     
     $scope.redirecionar = function () {        
         $state.transitionTo('home');

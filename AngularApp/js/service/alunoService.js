@@ -11,7 +11,7 @@ angulaAppModulo.factory("AlunoService", function($http) {
 	};
     
     var _consultarAlunoByNome = function(nome){
-		return $http.post(urlBase + "/aluno/listar/nome/" + encodeURI(nome))
+		return $http.get(urlBase + "/aluno/listar/nome/" + encodeURI(nome))
 	};
 
     return {
