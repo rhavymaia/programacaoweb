@@ -1,13 +1,12 @@
-angulaAppModulo.config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'home.html'
-        })
-        .when('/cadastrar', {
-            templateUrl: 'cadastrar.html'
-        })
-        .when('/listar', {
-            templateUrl: 'listar.html'
-        })
-        .otherwise('/');
+angulaAppModulo.config(function ($routeProvider, $locationProvider) {    
+    
+    // Remover a exclamação (!) da URL
+    var SEM_PREFIXO = '';
+    $locationProvider.hashPrefix(SEM_PREFIXO);
+    
+    // Atualizar os módulos passados no app.js adicionando o 'ui.router'. 
+    // Mover todas as rotas já definidas no router.js para o arquivo state.js.
+    // Verifiquar o modelo utilizado para o $stateProvider presente no state.js que é diferente.
+    // Não esquecer de importar no index o script state.js .
+    // Mudar no index.html o atributo ng-view para o ui-view.    
 });
