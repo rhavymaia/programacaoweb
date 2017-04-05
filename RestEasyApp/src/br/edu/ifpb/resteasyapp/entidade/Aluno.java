@@ -38,6 +38,10 @@ public class Aluno {
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_id_endereco") // Criará uma FK na tabela tb_aluno.
 	private Endereco endereco;
+	
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_id_escola")
+	private Escola escola;
 
 	@XmlElement
 	public Integer getId() {
@@ -72,5 +76,21 @@ public class Aluno {
 
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public Escola getEscola() {
+		return escola;
+	}
+
+	public void setEscola(Escola escola) {
+		this.escola = escola;
 	}	
 }

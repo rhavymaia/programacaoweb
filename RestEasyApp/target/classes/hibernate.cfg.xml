@@ -39,7 +39,8 @@
 		<!-- Entidades -->
 		<mapping class="br.edu.ifpb.resteasyapp.entidade.Aluno" />
 		<mapping class="br.edu.ifpb.resteasyapp.entidade.Turma" />
-		<mapping class="br.edu.ifpb.resteasyapp.entidade.Endereco" />									
+		<mapping class="br.edu.ifpb.resteasyapp.entidade.Endereco" />
+		<mapping class="br.edu.ifpb.resteasyapp.entidade.Escola" />									
 
 	</session-factory>
 </hibernate-configuration>
