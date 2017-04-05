@@ -9,7 +9,7 @@
     <div class="row">
 
         <form name="formPesquisa">
-            <!-- Pesquisar aluno pelo nome. O parâmetro aluno.nome é passado a função todas as vezes que o usuário digita algo -->
+            <!-- Pesquisar aluno pelo nome. O parâmetro nome é passado a função todas as vezes que o usuário digita algo -->
             <input type="text" ng-model="nome" ng-keyup="pesquisarAlunoPorNome(nome)" placeholder="Nome do Aluno">
 
             <!-- Limpar todos os campos do formulário e listas das páginas -->
@@ -28,6 +28,7 @@
 
     </div>
 
+    <!-- Exibir lista de Alunos -->
     <div class="row">
         <table class="table table-striped">
             <thead>

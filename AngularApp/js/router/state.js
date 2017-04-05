@@ -9,7 +9,7 @@ angulaAppModulo.config(function ($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: 'home.html'
         })
-        .state('cadastrar', {
+        .state("cadastrar", {
             url: '/cadastrar',
             templateUrl: 'cadastrar.html'
         })
