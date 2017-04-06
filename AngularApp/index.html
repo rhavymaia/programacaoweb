@@ -59,10 +59,11 @@
             <md-toolbar class="md-theme-indigo">
                 <h1 class="md-toolbar-tools">Menu Lateral</h1>
             </md-toolbar>
-            <md-content layout-padding ng-controller="MenuCtrl">
+            <!-- É necessário criar um controller para gerenciar o Sidnav: MenuController -->
+            <md-content layout-padding ng-controller="MenuController">
                 <!-- Menu -->
                 <ul class="nav navbar-nav">
-                    <!-- Navegações definidas no state.js -->
+                    <!-- Navegações definidas no state.js para o ui-sref. Não usar pontos (.) na definição da navegação, somente são permitidas as barras (/) -->
                     <li><a ui-sref="home">Home</a></li>
                     <li><a ui-sref="cadastrar">Cadastrar</a></li>
                     <li><a ui-sref="listar">Listar</a></li>
