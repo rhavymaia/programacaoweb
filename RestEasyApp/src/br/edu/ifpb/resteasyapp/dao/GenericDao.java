@@ -124,17 +124,23 @@ public abstract class GenericDao<PK, T> {
 		}
 	}
 
-	public void delete(Integer id) throws SQLException {
+	public boolean delete(Integer id) throws SQLException {
 
+		boolean isDelete = false;
+		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 
 		try {
 			
-			T entity = (T) session.load(getEntityClass(), id);
+			session.beginTransaction();
+			
+			T entity = (T) session.load(getEntityClass(), id);			
 			session.delete(entity);
 
 			// This makes the pending delete to be done
-			session.flush();
+			session.getTransaction().commit();
+			
+			isDelete = true;
 
 		} catch (HibernateException hibernateException) {
 
@@ -146,6 +152,8 @@ public abstract class GenericDao<PK, T> {
 
 			session.close();
 		}
+		
+		return isDelete;
 	}
 
 	public List<T> getAll(String namedQuery) throws SQLException {
