@@ -124,7 +124,42 @@ public abstract class GenericDao<PK, T> {
 		}
 	}
 
-	public boolean delete(Integer id) throws SQLException {
+	public int delete(String fieldIdName, String fieldIdValue) throws SQLException {
+		
+		int resultado = 0;
+		
+		String className = getEntityClass().getName();
+		
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		
+		try {
+			
+			session.beginTransaction();
+			
+			Query query = session.createQuery("delete " + className 
+					+ " where " + fieldIdName + " = :fieldValue");
+			
+			query.setParameter("fieldValue", fieldIdValue);
+			 
+			resultado = query.executeUpdate();
+			
+			session.getTransaction().commit();
+		
+		} catch (HibernateException hibernateException) {
+
+			session.getTransaction().rollback();
+
+			throw new SQLException(hibernateException);
+
+		} finally {
+
+			session.close();
+		}
+		
+		return resultado;
+	}
+	
+	public boolean delete(int id) throws SQLException {
 
 		boolean isDelete = false;
 		
