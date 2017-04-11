@@ -1,24 +1,25 @@
 <div class="container" ng-controller="alunoController">
-
-    <div class="row">
+    
+    <div layout="column" layout-align="start stretch">
         <div class="page-header">
             <h1>Cadastrar Aluno</h1>
         </div>
-    </div>    
     
-    <div class="row">
-        <form class="form-inline">
-            
-            <input type="text" ng-model="aluno.nome" placeholder="Nome" required>
-            <input type="text" ng-model="aluno.matricula" ng-keyup="addCampo()" placeholder="Matrícula" required>
-            
-            <button class="btn btn-primary" ng-click="adicionarAluno()">
-                Adicionar Aluno
-            </button>            
-        </form>
+        <form>
         
-        <button class="btn btn-primary" ng-click="redirecionar()">
-            Redirecionar Aluno
-        </button> 
+            <div>
+                <input type="text" ng-model="aluno.nome" placeholder="Nome" required>
+            </div>
+
+            <div>
+                <input type="text" ng-model="aluno.matricula" ng-keyup="addCampo()" placeholder="Matrícula" required>
+            </div>
+
+            <div>
+                <button class="btn btn-primary" ng-click="adicionarAluno()">
+                    Adicionar Aluno
+                </button>
+            </div>        
+        </form>
     </div>
 </div>

@@ -1,16 +1,30 @@
-angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $state) {
+angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $state, $mdToast) {
 
     var TAMANHO_MINIMO_PESQUISA = 3;
-    
+
     $scope.alunos = [];
 
-    $scope.adicionarAluno = function () {        
-        
+    $scope.adicionarAluno = function () {
+
         AlunoService.cadastrarAluno($scope.aluno)
             .then(function (response) {
                 // Chamado quando a resposta contém status de sucesso.
-                // Exibir no console o conteúdo da resposta.
-                console.log(response.data);
+                // Exibir toas com mensagem de sucesso ou erro.
+                var toast = $mdToast.simple()
+                    .textContent('Aluno(a) cadastrado(a) com sucesso.')
+                    .position('top right')
+                    .action('Ok')
+                    .hideDelay(6000);
+                $mdToast.show(toast);
+            })
+            .catch(function (data) {
+                // Handle error here
+                var toast = $mdToast.simple()
+                    .textContent('Problema no cadastro do Aluno.')
+                    .position('top right')
+                    .action('Ok')
+                    .hideDelay(6000);
+                $mdToast.show(toast);
             });
     };
 
@@ -22,30 +36,30 @@ angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $s
     };
 
     $scope.pesquisarAlunoPorNome = function (nome) {
-        
+
         console.log("Nome: " + nome);
-        
-        if(nome.length > TAMANHO_MINIMO_PESQUISA) {
+
+        if (nome.length > TAMANHO_MINIMO_PESQUISA) {
             AlunoService.consultarAlunoByNome(nome)
                 .then(function (response) {
                     $scope.alunos = response.data;
                 });
-        }        
+        }
     };
-    
-    $scope.limparFormulario = function() {
-        
+
+    $scope.limparFormulario = function () {
+
         // Reinicializa as variáveis nome e alunos.
         $scope.nome = "";
         angular.copy({}, $scope.alunos);
-        
+
         // Reinicializa o estado do campo para os eventos e validação.
         // É necessário indicar o atributo name no formulário <form>
         $scope.formPesquisa.$setPristine();
         $scope.formPesquisa.$setValidity();
     }
-    
-    $scope.redirecionar = function () {        
+
+    $scope.redirecionar = function () {
         $state.transitionTo('home');
     };
 });
