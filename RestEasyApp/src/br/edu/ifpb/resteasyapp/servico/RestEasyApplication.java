@@ -9,6 +9,7 @@ import org.jboss.resteasy.plugins.interceptors.CorsFilter;
 
 import br.edu.ifpb.resteasyapp.controller.AlunoController;
 import br.edu.ifpb.resteasyapp.controller.EnderecoController;
+import br.edu.ifpb.resteasyapp.controller.EscolaController;
 
 public class RestEasyApplication extends Application {
 
@@ -28,6 +29,7 @@ public class RestEasyApplication extends Application {
 		// Controllers disponíveis no serviço.
 		this.singletons.add(new AlunoController());
 		this.singletons.add(new EnderecoController());
+		this.singletons.add(new EscolaController());
 	}
 
 	public Set<Class<?>> getClasses() {

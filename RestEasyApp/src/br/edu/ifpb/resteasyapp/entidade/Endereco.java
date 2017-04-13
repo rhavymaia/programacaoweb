@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlElement;
 
 @Entity
 @Table(name = "tb_endereco")
@@ -21,6 +22,7 @@ public class Endereco {
 	@Column(name = "nm_logradouro")
 	private String logradouro;
 
+	@XmlElement
 	public Integer getId() {
 		return id;
 	}
@@ -29,6 +31,7 @@ public class Endereco {
 		this.id = id;
 	}
 
+	@XmlElement
 	public String getLogradouro() {
 		return logradouro;
 	}

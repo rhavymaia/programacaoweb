@@ -11,9 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
-import br.edu.ifpb.resteasyapp.dao.AlunoDAO;
 import br.edu.ifpb.resteasyapp.dao.EnderecoDAO;
-import br.edu.ifpb.resteasyapp.entidade.Aluno;
 import br.edu.ifpb.resteasyapp.entidade.Endereco;
 
 @Path("endereco")

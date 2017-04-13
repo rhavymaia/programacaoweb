@@ -69,7 +69,7 @@ public class Aluno {
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
-
+	@XmlElement
 	public Endereco getEndereco() {
 		return endereco;
 	}
@@ -78,6 +78,7 @@ public class Aluno {
 		this.endereco = endereco;
 	}
 
+	@XmlElement
 	public String getEmail() {
 		return email;
 	}
@@ -86,6 +87,7 @@ public class Aluno {
 		this.email = email;
 	}
 
+	@XmlElement
 	public Escola getEscola() {
 		return escola;
 	}

@@ -16,13 +16,15 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 import br.edu.ifpb.resteasyapp.dao.AlunoDAO;
+import br.edu.ifpb.resteasyapp.dao.EscolaDAO;
 import br.edu.ifpb.resteasyapp.entidade.Aluno;
+import br.edu.ifpb.resteasyapp.entidade.Escola;
 
 @Path("aluno")
 public class AlunoController {
 
 	/**
-	 * Cadastra o aluno no sistema.
+	 * Cadastrar aluno.
 	 * 
 	 * @param aluno
 	 * @return Response
@@ -38,19 +40,23 @@ public class AlunoController {
 		ResponseBuilder builder = Response.status(Response.Status.BAD_REQUEST);
 		builder.expires(new Date());
 		
-		//TODO: Regra de negócio e manipulação de dados nesse ponto. As informaçãos devem ser associadas
-		// nesse ponto ao biuld (response).
-		
+		// Regra de negócio e manipulação de dados nesse ponto.		
 		try {
 			
+			// Recuperando valores completos da Escola.
+			int idEscola = aluno.getEscola().getId();
+			Escola escola = EscolaDAO.getInstance().getById(idEscola);
+			aluno.setEscola(escola);
+			
+			// Inserção do Aluno.
 			int idAluno = AlunoDAO.getInstance().insert(aluno);
 			
-			aluno.setId(idAluno);
-			
+			// As informaçãos devem ser associadas nesse ponto ao build (response).
 			builder.status(Response.Status.OK).entity(aluno);
 		
 		} catch (SQLException e) {
 			
+			// Tratar a exceção.
 			builder.status(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 		
@@ -59,7 +65,7 @@ public class AlunoController {
 	}
 	
 	/**
-	 * Retorna todos os alunos cadastrados.
+	 * Listar todos os Alunos.
 	 * 
 	 * @return Response
 	 */
@@ -80,7 +86,7 @@ public class AlunoController {
 		
 		} catch (SQLException e) {
 			
-			// TODO: Tratar a exceção.
+			// Tratar a exceção.
 		}
 		
 		// Será retornado ao cliente um conjunto de alunos no formato de Json.
@@ -88,7 +94,7 @@ public class AlunoController {
 	}
 	
 	/**
-	 * Recuperar o aluno cadastrado no sistema através do seu id.
+	 * Recuperar o aluno através do seu id.
 	 * 
 	 * @param idAluno
 	 * @return Response
@@ -122,6 +128,7 @@ public class AlunoController {
 
 		} catch (SQLException exception) {
 
+			// Tratar a exceção.
 			builder.status(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 
@@ -129,6 +136,12 @@ public class AlunoController {
 		return builder.build();
 	}
 	
+	/**
+	 * Listar aluno através do nome.
+	 * 
+	 * @param nome
+	 * @return
+	 */
 	@PermitAll
 	@GET
 	@Path("/listar/nome/{nome}")
@@ -158,6 +171,7 @@ public class AlunoController {
 
 		} catch (SQLException exception) {
 
+			// Tratar a exceção.
 			builder.status(Response.Status.INTERNAL_SERVER_ERROR);
 		}
 
