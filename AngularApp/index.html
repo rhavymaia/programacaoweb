@@ -21,11 +21,11 @@
 
     <!-- Bootstrap -->
     <script src="js/lib/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <!-- Tether - Dependência obrigatória do Bootstrap -->
     <script src="js/lib/tether.min.js"></script>
-    <link rel="stylesheet" href="css/tether.min.css">    
+    <link rel="stylesheet" href="css/tether.min.css">
 
     <!-- App -->
     <script src="js/app.js"></script>
@@ -39,6 +39,8 @@
 
     <!-- Service -->
     <script src="js/service/alunoService.js"></script>
+    <script src="js/service/escolaService.js"></script>
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilo.css">
@@ -53,7 +55,7 @@
     </md-toolbar>
 
     <div flex layout="row">
-        
+
         <!-- Menu Lateral -->
         <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4">
 
@@ -66,8 +68,8 @@
                 <ul class="nav navbar-nav">
                     <!-- Navegações definidas no state.js para o ui-sref. Não usar pontos (.) na definição da navegação, somente são permitidas as barras (/) -->
                     <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="cadastrar">Cadastrar</a></li>
-                    <li><a ui-sref="listar">Listar</a></li>
+                    <li><a ui-sref="/aluno/cadastrar">Cadastrar Aluno</a></li>
+                    <li><a ui-sref="/aluno/listar">Listar Alunos</a></li>
                 </ul>
             </md-content>
 

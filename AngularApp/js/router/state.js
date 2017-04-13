@@ -9,12 +9,12 @@ angulaAppModulo.config(function ($stateProvider, $urlRouterProvider) {
             url: '/',
             templateUrl: 'home.html'
         })
-        .state("cadastrar", {
-            url: '/cadastrar',
-            templateUrl: 'cadastrar.html'
+        .state("/aluno/cadastrar", {
+            url: '/aluno/cadastrar',
+            templateUrl: 'cadastrarAluno.html'
         })
-        .state('listar', {
-            url: '/listar',
-            templateUrl: 'listar.html'
+        .state('/aluno/listar', {
+            url: '/aluno/listar',
+            templateUrl: 'listarAluno.html'
         })
 });

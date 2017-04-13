@@ -1,7 +1,11 @@
-angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $state, $mdToast) {
+angulaAppModulo.controller('alunoController', function (AlunoService, EscolaService, $scope, $state, $mdToast) {
 
     var TAMANHO_MINIMO_PESQUISA = 3;
 
+    // Select.
+    $scope.escolas = []; // Verificar função de carregamento inicial (carregamentoInicial) do(s) campo(s) select(s).
+
+    // Alunos da busca por nome do Aluno.
     $scope.alunos = [];
 
     $scope.adicionarAluno = function () {
@@ -59,7 +63,17 @@ angulaAppModulo.controller('alunoController', function (AlunoService, $scope, $s
         $scope.formPesquisa.$setValidity();
     }
 
-    $scope.redirecionar = function () {
-        $state.transitionTo('home');
-    };
+
+    // Carregamento do(s) campo(s) select(s).
+    carregamentoInicial = function () {
+
+        // Escola.
+        EscolaService.getEscolas()
+            .then(function (response) {
+                // Escolas que serão exibidas na página.
+                $scope.escolas = response.data;
+            });
+    }
+
+    carregamentoInicial();
 });
