@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="zumbiApp">
+
+    <head>
+        <title>
+            Minha aplicação Zumbi
+        </title>
+
+        <!-- Angular -->
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/lib/angular-route.min.js"></script>
+        <script src="js/lib/angular-ui-router.min.js"></script>
+        <script src="js/lib/angular-sanitize.min.js"></script>
+        <script src="js/lib/angular-animate.min.js"></script>
+        <script src="js/lib/angular-aria.min.js"></script>
+
+        <!-- JQuery -->
+        <script src="js/lib/jquery.min.js"></script>
+
+        <!-- Bootstrap -->
+        <script src="js/lib/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <!-- Tether - Dependência obrigatória do Bootstrap -->
+        <script src="js/lib/tether.min.js"></script>
+        <link rel="stylesheet" href="css/tether.min.css">
+
+        <!-- Angular App -->
+        <script src="js/app.js"></script>
+
+        <!-- Rota -->
+        <script src="js/router/router.js"></script>
+    </head>
+
+    <body ng-cloak>
+        <div>
+            Cabeçalho
+        </div>
+
+        <div ng-view></div>
+        
+        <div>
+            Rodapé
+        </div>
+    </body>
+    
+</html>

@@ -1,0 +1,1 @@
+var zumbiAppModulo = angular.module('zumbiApp', ['ngRoute']);
