@@ -36,14 +36,19 @@
     <!-- Controller -->
     <script src="js/controller/alunoController.js"></script>
     <script src="js/controller/menuController.js"></script>
-
+    
     <!-- Service -->
     <script src="js/service/alunoService.js"></script>
     <script src="js/service/escolaService.js"></script>
-
-
+    <script src="js/service/menuService.js"></script>
+    
+    <!-- Diretiva -->
+    <script src="js/directives/menuLinkDirective.js"></script>
+    <script src="js/directives/menuToggleDirective.js"></script>
+    
     <!-- CSS -->
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/menu.css">
 
 </head>
 
@@ -63,14 +68,20 @@
                 <h1 class="md-toolbar-tools">Menu Lateral</h1>
             </md-toolbar>
             <!-- É necessário criar um controller para gerenciar o Sidnav: MenuController -->
-            <md-content layout-padding ng-controller="MenuController">
-                <!-- Menu -->
-                <ul class="nav navbar-nav">
-                    <!-- Navegações definidas no state.js para o ui-sref. Não usar pontos (.) na definição da navegação, somente são permitidas as barras (/) -->
-                    <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="/aluno/cadastrar">Cadastrar Aluno</a></li>
-                    <li><a ui-sref="/aluno/listar">Listar Alunos</a></li>
+            <md-content layout-padding ng-controller="MenuController as vm">
+                
+                <ul class="side-menu">
+                  <li ng-repeat="section in vm.menu.sections" class="parent-list-item"
+                      ng-class="{'parentActive' : vm.isSectionSelected(section)}">
+                    <h2 class="menu-heading" ng-if="section.type === 'heading'"
+                        id="heading_{{ section.name | nospace }}">
+                      {{section}}
+                    </h2>
+                    <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+                    <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                  </li>
                 </ul>
+
             </md-content>
 
         </md-sidenav>
