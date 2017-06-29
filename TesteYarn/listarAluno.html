@@ -1,0 +1,53 @@
+<div class="container" ng-controller="alunoController">
+
+    <div class="row">
+        <div class="page-header">
+            <h1>Listar Alunos</h1>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <form name="formPesquisa">
+            <!-- Pesquisar aluno pelo nome. O parâmetro nome é passado a função todas as vezes que o usuário digita algo -->
+            <input type="text" ng-model="nome" ng-keyup="pesquisarAlunoPorNome(nome)" placeholder="Nome do Aluno">
+
+            <!-- Limpar todos os campos do formulário e listas das páginas -->
+            <button class="btn btn-primary" ng-click="limparFormulario()">
+                Limpar
+            </button>
+        </form>
+    </div>
+
+    <div class="row">
+
+        <!-- Listar todos os alunos, não pesquisa pelo nome -->
+        <button class="btn btn-primary" ng-click="listarAlunos()">
+            Listar todos os Alunos
+        </button>
+
+    </div>
+
+    <!-- Exibir lista de Alunos -->
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Identificador</th>
+                    <th>Nome</th>
+                    <th>Matrícula</th>
+                    <th>Endereço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aluno in alunos">
+                    <td>{{ aluno.id }}</td>
+                    <td>{{ aluno.nome }}</td>
+                    <td>{{ aluno.matricula }}</td>
+                    <td>{{ aluno.endereco.logradouro }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
