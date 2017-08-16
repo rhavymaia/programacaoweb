@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Meu título</title>
+        <meta charset="utf-8">
+        <link href="css/app.css" rel="stylesheet">
+        <style>
+            body{
+                margin: 0;
+                padding: 0;
+            }
+            
+            div {
+                border-style: solid;
+                border-width: 1px;
+                margin: 5px;
+                padding: 10px;
+            }
+            
+            li {
+                border-left-style: solid;
+                border-left-width: 2px;
+                display: inline;
+                padding: 8px;
+            }
+            
+            .sembarra {
+                border-left-width: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Div 1
+            <div>
+                <ul>
+                    <li class="sembarra">Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                    <li>Item 4</li>
+                </ul>
+            </div>
+        </div>
+        <div>Div 2</div>
+    </body>
+</html>
