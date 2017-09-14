@@ -1,0 +1,44 @@
+<div class="container" ng-controller="alunoController">
+
+    <div layout="column" layout-align="start stretch">
+        <div class="page-header">
+            <h1>Cadastrar Aluno</h1>
+        </div>
+
+        <form>
+            <!-- Nome -->
+            <div>
+                <label for="nome"> Nome: </label>
+                <input name="nome" type="text" ng-model="aluno.nome" placeholder="Nome" required>
+            </div>
+
+            <!-- Matrícula -->
+            <div>
+                <label for="matricula"> Matrícula: </label>
+                <input name="matricula" type="text" ng-model="aluno.matricula" ng-keyup="addCampo()" placeholder="Matrícula" required>
+            </div>
+
+            <!-- Escola -->
+            <div>
+                <label for="escolas"> Escola: </label>
+                <!-- O ng-model representa o valor que será enviado ao controller para submissão ao serviço -->
+                <select name="escolas" ng-model="aluno.escola.id">
+                    
+                    <!-- A listas escolas é inicializada no controller pela função carregamentoInicial -->
+                    <option ng-repeat="escola in escolas" value="{{escola.id}}">
+                        {{escola.nome}}
+                    </option>
+                </select>
+                
+                {{aluno.escola.id}}
+            </div>
+
+            <!-- Botão de envio -->
+            <div>
+                <button class="btn btn-primary" ng-click="adicionarAluno()">
+                    Adicionar Aluno
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
