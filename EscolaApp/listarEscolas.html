@@ -1,0 +1,100 @@
+<html ng-app="EscolaApp">
+
+<head>
+    <title>Escola</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="css/escola.css">
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- AngularJS -->
+    <script src="js/angular-1.7.5/angular.min.js" type="text/javascript"></script>
+    <script>
+        var escolaApp = angular.module("EscolaApp", []);
+        var baseUrl = "http://mobile-aceite.tcu.gov.br:80/nossaEscolaRS";
+
+        // Factory - API
+        var escolaApi = function ($http) {
+            var _getEscolas = function () {
+              return $http.get(baseUrl + "/rest/escolas/");
+            };
+
+            return {
+              getEscolas: _getEscolas
+            };
+        }
+
+        escolaApp.factory("escolaApi", escolaApi);
+
+        // Controllers
+        var listarEscolaCtrl = function($scope, escolaApi) {
+
+            $scope.escolas = [];
+
+            $scope.listarEscola = function() {
+              escolaApi.getEscolas()
+                    .then(function (response) {
+                        $scope.escolas = response.data;
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+            }
+        };
+
+        escolaApp.controller("ListarEscolaCtrl", listarEscolaCtrl);
+
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Escolas</a>
+            </nav>
+        </header>
+        <main>
+            <form ng-controller="ListarEscolaCtrl">
+                <!-- Tabela de Escolas -->
+                <div class="box">
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Rede</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="escola in escolas">
+                                <td scope="row">{{escola.codEscola}}</td>
+                                <td scope="row">{{escola.nome}}</td>
+                                <td scope="row">{{escola.rede}}</td>
+                                <td scope="row">{{escola.email}}</td>
+                                <td scope="row">{{escola.categoriaEscolaPrivada}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-lg btn-block"
+                  ng-click="listarEscola()">
+                  Listar
+                </button>
+            </form>
+        </main>
+
+        <footer>
+            Dados - TCU
+        </footer>
+    </div>
+</body>
+
+</html>

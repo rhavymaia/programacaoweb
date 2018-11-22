@@ -1,0 +1,33 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    margin: 15px 5px;
+}
+
+header {
+    width: 100%;
+    display: block;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #FBFCFC;
+}
+
+footer {
+    background-color: #D7DBDD;
+    border-top: 3px solid #566573;
+    width: 100%;
+}
