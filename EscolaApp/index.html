@@ -31,12 +31,17 @@
                 + quantidadeDeItens);
             };
 
+            var _getEscola = function (codEscola) {
+              return $http.get(baseUrl + "/rest/escolas/" + codEscola);
+            };
+
             var _getAvaliacoes = function() {
               return $http.get(baseUrl + "/rest/tiposavaliacao");
             };
 
             return {
               getEscolas: _getEscolas,
+              getEscola: _getEscola,
               getAvaliacoes: _getAvaliacoes
             };
         }
@@ -60,7 +65,23 @@
             }
         };
 
+        var pesquisarEscolaCtrl = function($scope, escolaApi) {
+
+            $scope.escola = {};
+
+            $scope.pesquisarEscola = function(codEscola) {
+              escolaApi.getEscola(codEscola)
+                    .then(function (response) {
+                        $scope.escola = response.data;
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+            }
+        };
+
         escolaApp.controller("ListarEscolaCtrl", listarEscolaCtrl);
+        escolaApp.controller("PesquisarEscolaCtrl", pesquisarEscolaCtrl);
 
         // Navegação.
         escolaApp.config( function($stateProvider, $urlRouterProvider) {
@@ -77,6 +98,11 @@
                     templateUrl: 'listarEscolas.html',
                     controller: 'ListarEscolaCtrl'
                 })
+                .state('pesquisar', {
+                    url: '/pesquisar',
+                    templateUrl: 'pesquisarEscola.html',
+                    controller: 'PesquisarEscolaCtrl'
+                })
         });
     </script>
 </head>
@@ -91,6 +117,7 @@
             <ul class="nav navbar-nav">
                 <li><a ui-sref="home">Home</a></li>
                 <li><a ui-sref="listar">Listar</a></li>
+                <li><a ui-sref="pesquisar">Pesquisar</a></li>
             </ul>
         </nav>
       </header>
