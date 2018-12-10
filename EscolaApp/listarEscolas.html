@@ -29,6 +29,7 @@
                         <th scope="col">Rede</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Categoria</th>
+                        <th md-column>Editar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,6 +39,16 @@
                         <td scope="row">{{escola.rede}}</td>
                         <td scope="row">{{escola.email}}</td>
                         <td scope="row">{{escola.categoriaEscolaPrivada}}</td>
+                        <td md-cell>
+                            <md-button aria-label="Detalhar"
+                              ui-sref="pesquisar({codEscola: escola.codEscola})"
+                              ui-sref-opts="{reload: true}">
+                                <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
+                                <md-tooltip md-direction="bottom">
+                                    Detalhar
+                                </md-tooltip>
+                            </md-button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

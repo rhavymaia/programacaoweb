@@ -30,3 +30,12 @@ footer {
     border-top: 3px solid #566573;
     width: 100%;
 }
+
+/* Toast */
+md-toast.my-error .md-toast-content {
+    background-color: #c94c4c;
+}
+
+md-toast.my-success .md-toast-content {
+    background-color: #618685;
+}
