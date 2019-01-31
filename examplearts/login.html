@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>
+        Meu login.
+    </title>
+    <meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h1> Cadastre-se</h1>
+            <hr>
+        </div>
+        <div class="row">
+            <form action="127.0.0.1:5000/cliente" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" class="form-control" />
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" class="form-control" />
+
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" class="form-control" />
+
+                <div class="form-group">
+                    <label for="genero">Gênero</label>
+                    <input type="radio" name="genero" value="masculino" />
+                    <input type="radio" name="genero" value="feminino" />
+                </div>
+
+                <input type="submit" value="Enviar" name="enviarBotao" class="btn btn-lg btn-success" />
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
