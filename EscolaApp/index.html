@@ -32,6 +32,18 @@
     <!-- Aplicação -->
     <script src="js/app.js" type="text/javascript">
     </script>
+    <!-- Factorys -->
+    <script src="js/factory/EscolaApi.js" type="text/javascript">
+    </script>
+    <script src="js/factory/TipoAvaliacaoApi.js" type="text/javascript">
+    </script>
+    <!-- Controllers -->
+    <script src="js/controller/ListarEscolasCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/PesquisarEscolaCtrl.js" type="text/javascript"></script>
+    <script src="js/controller/ListarTiposAvaliacaoCtrl.js" type="text/javascript">
+    </script>
+    <!-- Rotas -->
+    <script src="js/router.js" type="text/javascript"></script>
 
     <!-- Jquery -->
     <script src="https://unpkg.com/jquery@^3.3.1/dist/jquery.min.js"></script>
@@ -48,8 +60,8 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="home">Home</a></li>
-                    <li><a ui-sref="listar">Listar</a></li>
-                    <li><a ui-sref="pesquisar">Pesquisar</a></li>
+                    <li><a ui-sref="escolas">Escolas</a></li>
+                    <li><a ui-sref="tiposAvaliacao">Avaliações</a></li>
                 </ul>
             </nav>
         </header>

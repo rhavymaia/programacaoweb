@@ -1,5 +1,5 @@
 <main>
-    <form ng-controller="ListarEscolaCtrl">
+    <form>
         <!-- Campo do formulário -->
         <div class="box">
             <div class="form-group">
@@ -40,8 +40,9 @@
                         <td scope="row">{{escola.email}}</td>
                         <td scope="row">{{escola.categoriaEscolaPrivada}}</td>
                         <td md-cell>
+                            <!-- Redirecionar para a página de escola por código: escolaPorCodigo -->
                             <md-button aria-label="Detalhar"
-                              ui-sref="pesquisar({codEscola: escola.codEscola})"
+                              ui-sref="escolaPorCodigo({codEscola: escola.codEscola})"
                               ui-sref-opts="{reload: true}">
                                 <ng-md-icon icon="dehaze" size="18"></ng-md-icon>
                                 <md-tooltip md-direction="bottom">

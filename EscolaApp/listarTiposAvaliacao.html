@@ -1,0 +1,40 @@
+<main>
+    <form>
+        <!-- Campo do formulário -->
+        <div class="box">
+            <div class="form-group">
+                <label for="quantidade">
+                    Avaliação: 
+                </label>
+                <!-- Nome do tipo da avaliação -->
+                <input class="form-control"
+                       type="text" 
+                       ng-model="nome" 
+                       placeholder="Nome do Tipo da Avaliação">
+            </div>            
+            <button type="button"
+                    class="btn btn-primary btn-lg btn-block"
+                    ng-click="listarTiposAvaliacao(nome)">
+              Listar
+            </button>
+        </div>
+
+        <!-- Tabela de Escolas -->
+        <div class="box">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="tipoAvaliacao in tiposAvaliacao">
+                        <td scope="row">{{tipoAvaliacao.cod}}</td>
+                        <td scope="row">{{tipoAvaliacao.nome}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</main>
