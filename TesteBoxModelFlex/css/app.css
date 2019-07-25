@@ -5,11 +5,11 @@
     padding: 0;
 }
 
-.wrapper {
+.container {
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    
+
     /* Flex para o parent */
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@ footer {
 }
 
 /* Main */
-.content {    
+.content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
