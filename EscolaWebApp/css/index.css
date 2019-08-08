@@ -4,11 +4,14 @@
   padding: 0;
 }
 
+body {
+  font-family: arial, verdana, helvetica, sans-serif;
+}
+
 /* Box principal: container*/
 .meu-container{
   margin: 0 auto;
   padding: 0;
-  border: 1px solid red;
   width: 80%;
   min-height: 100vh;
   /* Flex */
@@ -17,19 +20,18 @@
 }
 
 header {
-  background-color: #2ecc71;
+  background-color: #02734A;
 }
 
 main {
-  background-color: #ecf0f1;
+  background-color: #D9D4D0;
   flex-grow: 1;
 }
 
 footer {
-  background-color: #2c3e50;
+  background-color: #BF7256;
 }
 
 .wrapper {
   padding: 0;
-  border: 1px solid gray;
 }

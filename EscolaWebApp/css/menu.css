@@ -1,9 +1,8 @@
 /* CSS - Menu */
 .navigation {
-    border: 1px solid green;
     list-style: none;
     margin: 0;
-    background: deepskyblue;
+    background: #025939;
 
     /* Flex para o parent */
     display: flex;
@@ -18,5 +17,7 @@
 }
 
 .navigation a:hover {
-    background: rgba(70, 130, 180, .5);
+    background: #1C2620;
+    text-decoration: none;
+    color: #BF7256;
 }
