@@ -19,7 +19,7 @@
     "angular-sanitize": "^1.6.4",
     "angular-timeline": "^1.7.0",
     "angular-ui-router": "^1.0.3",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "ng-img-crop-npm": "^0.3.2",
