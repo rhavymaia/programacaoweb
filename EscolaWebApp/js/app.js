@@ -4,25 +4,24 @@ let modulos = [];
 var app = angular.module(nomeApp, modulos);
 
 // Estrutura básica para uma função no controlador.
-var meuPrimeiroController = function($scope){
-  $scope.logradouro = "Outro valor";
-  $scope.numero1 = 0;
-  $scope.numero2 = 0;
-  let nome = "João";
-  $scope.nome = nome;
+var homeController = function($scope){
+  $scope.nome = "";
 
-  $scope.somar = function(numero1, numero2) {
-    $scope.resultado = somar(numero1, numero2);
-  }
-
-  function somar(numero1, numero2) { 
-    return numero1 + numero2;
+  $scope.desejarBoasVindas = function() {
+    let nome = $scope.nome;
+    $scope.mensagem = "Olá, " + nome;
   }
 }
 
-app.controller('MeuPrimeiroController', meuPrimeiroController);
+app.controller('HomeController', homeController);
 
-var meuSegundoController = function($scope){
+var alunoController = function($scope){
+  $scope.nome = "";
+  $scope.matricula = "";
+  $scope.cpf = "";
+  $scope.nascimento = "";
+  $scope.id_endereço = "";
+  $scope.id_endereço = "";
 }
 
-app.controller('MeuSegundoController', meuSegundoController);
+app.controller('AlunoController', alunoController);

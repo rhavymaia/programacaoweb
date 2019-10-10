@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Página de Cadastro do Campus</title>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="meu-container">
+      <header>
+        <a href="index.html"><img src="img/logo.png" class="img-fluid" alt="logo" width="" height=""></a>
+
+        <nav class="navbar navbar-expand-lg navigation">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon white">=</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="index.html">Página Inicial</a>
+              <a class="nav-item nav-link" href="aluno.html">Aluno</a>
+              <a class="nav-item nav-link" href="endereço.html">Endereço</a>
+              <a class="nav-item nav-link" href="escola.html">Escola</a>
+              <a class="nav-item nav-link" href="professor.html">Professor</a>
+              <a class="nav-item nav-link" href="campus.html">Campus</a>
+              <a class="nav-item nav-link" href="turno.html">Turno</a>
+              <a class="nav-item nav-link" href="curso.html">Curso</a>
+              <a class="nav-item nav-link" href="disciplina.html">Disciplina</a>
+              <a class="nav-item nav-link" href="turma.html">Turma</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <form action="http://localhost:5000/campus" method='POST'>
+
+              <div class="form-group">
+                <label for= 'sigla'> Sigla: </label>
+                <input type = 'text' name = 'sigla' class="form-control" value="sigla">
+              </div>
+
+              <div class="form-group">
+                <label for= 'cidade'> Cidade:</label>
+                <input type= 'text' name= 'cidade' class="form-control" value="cidade">
+              </div>
+
+
+              <input type= 'submit' name='cadastrar' value= 'Cadastrar' class="btn btn-dark btn-lg btn-block">
+        </div>
+
+        </form>
+      </main>
+      <footer>
+        <div class="col-12">
+          <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> - Direitos Reservados - Desenvolvido por Emanuel Gomes e Maria Vitória.</p>
+        </div>
+      </footer>
+      </div>
+
+  </body>
+</html>

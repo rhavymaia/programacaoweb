@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Página Inicial</title>
     <link rel="shortcut icon" href="img/ifpb.png">
+
     <!-- Estilo -->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
@@ -32,11 +33,8 @@
         </h2>
         <nav>
           <ul class="navigation">
-            <li>
-              <a href="#">
-                Aluno
-              </a>
-            </li>
+            <li><a href="campus.html">Campus</a></li>
+            <li><a href="#">Aluno</a></li>
             <li><a href="#">Curso</a></li>
             <li><a href="#">Disciplina</a></li>
             <li><a href="escola.html">Escola</a></li>
@@ -44,18 +42,13 @@
           </ul>
         </nav>
       </header>
-      <main ng-controller="MeuPrimeiroController">
-
-        <input type="text" ng-model="logradouro"
-          name="logradouro" value="">
-        <h1>Meu logradouro é {{logradouro}}</h1>
-
-        <input type="number" ng-model="numero1">
-        <input type="number" ng-model="numero2">
-
-        <button ng-click="somar(numero1, numero2)">Somar</button>
-
-        <h2>{{resultado}}</h2>
+      <main ng-controller="HomeController">
+        <div class="form-group">
+          <label for= 'nome'> Nome: </label>
+          <input type="text" name="nome" class="form-control" ng-model="nome">
+        </div>
+        <button ng-click="desejarBoasVindas()" class="btn btn-dark btn-lg btn-block">Exibir</button>
+        <h1>{{mensagem}}</h1>
       </main>
       <footer>
         Rodapé
