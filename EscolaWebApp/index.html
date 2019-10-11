@@ -34,7 +34,7 @@
         <nav>
           <ul class="navigation">
             <li><a href="campus.html">Campus</a></li>
-            <li><a href="#">Aluno</a></li>
+            <li><a href="aluno.html">Aluno</a></li>
             <li><a href="#">Curso</a></li>
             <li><a href="#">Disciplina</a></li>
             <li><a href="escola.html">Escola</a></li>
@@ -43,12 +43,19 @@
         </nav>
       </header>
       <main ng-controller="HomeController">
-        <div class="form-group">
-          <label for= 'nome'> Nome: </label>
-          <input type="text" name="nome" class="form-control" ng-model="nome">
-        </div>
-        <button ng-click="desejarBoasVindas()" class="btn btn-dark btn-lg btn-block">Exibir</button>
-        <h1>{{mensagem}}</h1>
+        <form name=boasVindasForm>
+          <div class="form-group">
+            <label for= 'nome'> Nome: </label>
+            <input type="text" name="nome" class="form-control" ng-model="nome"
+              required ng-minlength="3" ng-maxlength="25">
+            <div ng-show="boasVindasForm.nome.$invalid && boasVindasForm.nome.$dirty"
+              class="alert alert-danger">
+              Por favor, preencha o campo nome!
+            </div>
+          </div>
+          <button ng-click="desejarBoasVindas()" class="btn btn-dark btn-lg btn-block">Exibir</button>
+          <h1>{{mensagem}}</h1>
+        </form>
       </main>
       <footer>
         Rodapé
