@@ -17,18 +17,13 @@ app.controller('HomeController', homeController);
 
 // Aluno - Controller
 var alunoController = function($scope) {
-  $scope.nome = "";
-  $scope.matricula = "";
-  $scope.cpf = "";
-  $scope.nascimento = "";
-  $scope.id_endereço = "";
-  $scope.id_endereço = "";
+
+  $scope.aluno = {};
 
   $scope.cadastrar = function() {
     alunoApi.cadastrar($scope.aluno)
       .then(function(response) {})
       .catch(function(error) {});
-    $scope.alunoForm.$setPristine();
   }
 }
 
@@ -41,11 +36,11 @@ var alunoFactory = function($http) {
   var path = baseUrl + "/aluno";
 
   var _cadastrar = function(aluno) {
-    return $http.post(_path, aluno)
+    return $http.post(path, aluno)
   };
 
   var _atualizar = function(aluno) {
-    return $http.put(_path, aluno)
+    return $http.put(path, aluno)
   };
 
   var _buscarPorId = function(id) {

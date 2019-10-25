@@ -51,7 +51,7 @@
               <!-- Nome -->
               <label for= 'nome'> Nome: </label>
               <input type = 'text' name = 'nome' class="form-control"
-                ng-model="nome" required ng-minlength="3" ng-maxlength="25">
+                ng-model="aluno.nome" required ng-minlength="3" ng-maxlength="25">
               <div>
                 <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty"
                   class="alert alert-danger">
@@ -72,7 +72,7 @@
             <div class="form-group">
               <label for= 'matricula'> Matrícula:</label>
               <input type= 'text' name= 'matricula' class="form-control"
-                ng-model="matricula" required ng-minlength="12">
+                ng-model="aluno.matricula" required ng-minlength="12">
               <div ng-messages="alunoForm.matricula.$error" ng-if='alunoForm.matricula.$dirty'>
                 <div ng-message="required" class="alert alert-danger">
                   Por favor, preencha o campo Matrícula!
@@ -86,30 +86,37 @@
             <!-- CPF -->
             <div class="form-group">
               <label for= 'cpf'> CPF:</label>
-              <input type= 'text' name= 'cpf' class="form-control" ng-model="cpf">
+              <input type= 'text' name= 'cpf' class="form-control"
+                ng-model="aluno.cpf">
             </div>
 
             <!-- Nascimento -->
             <div class="form-group">
               <label for= 'nascimento'> Nascimento:</label>
-              <input type= 'date' name= 'nascimento' class="form-control" ng-model="nascimento">
+              <input type= 'date' name= 'nascimento' class="form-control"
+                ng-model="aluno.nascimento">
             </div>
 
             <!-- Endereço -->
             <div class="form-group">
               <label for= 'id_endereço'> Número de Identificação do Endereço:</label>
-              <input type= 'text' name= 'id_endereco' class="form-control" ng-model="id_endereco">
+              <input type= 'text' name= 'id_endereco' class="form-control"
+                ng-model="aluno.id_endereco">
             </div>
 
             <!-- Curso -->
             <div class="form-group">
               <label for= 'id_curso'> Número de Identificação do Curso:</label>
-              <input type= 'text' name= 'id_curso' class="form-control" ng-model="id_endereco">
+              <input type= 'text' name= 'id_curso' class="form-control"
+                ng-model="aluno.id_endereco">
             </div>
 
             <!-- Botões -->
-            <input type= 'reset' name='limpar' value= 'Limpar' class="btn btn-secondary btn-lg btn-block">
-            <button ng-click="cadastrar()" class="btn btn-dark btn-lg btn-block">Cadastrar</button>
+            <input type= 'reset' name='limpar' value= 'Limpar' 
+              class="btn btn-secondary btn-lg btn-block">
+            <button ng-click="cadastrar()"
+              class="btn btn-dark btn-lg btn-block">
+              Cadastrar</button>
         </form>
       </main>
       <footer>
