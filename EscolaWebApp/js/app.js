@@ -33,29 +33,13 @@ app.controller('AlunoController', alunoController);
 var alunoFactory = function($http) {
 
   var baseUrl = "localhost:5000";
-  var path = baseUrl + "/aluno";
 
   var _cadastrar = function(aluno) {
-    return $http.post(path, aluno)
-  };
-
-  var _atualizar = function(aluno) {
-    return $http.put(path, aluno)
-  };
-
-  var _buscarPorId = function(id) {
-    return $http.get(_path + "/" + encodeURI(id))
-  };
-
-  var _listar = function() {
-    return $http.get(_path)
+    return $http.post(baseUrl + "/aluno", aluno);
   };
 
   return {
-    cadastrar: _cadastrar,
-    atualizar: _atualizar,
-    buscarPorId: _buscarPorId,
-    listar: _listar
+    cadastrar: _cadastrar
   };
 }
 
