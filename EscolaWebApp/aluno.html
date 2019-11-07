@@ -51,7 +51,9 @@
               <!-- Nome -->
               <label for= 'nome'> Nome: </label>
               <input type = 'text' name = 'nome' class="form-control"
-                ng-model="aluno.nome" required ng-minlength="3" ng-maxlength="25">
+                ng-model="aluno.nome"
+                required ng-minlength="3"
+                ng-maxlength="25">
               <div>
                 <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty"
                   class="alert alert-danger">
@@ -108,11 +110,11 @@
             <div class="form-group">
               <label for= 'id_curso'> Número de Identificação do Curso:</label>
               <input type= 'text' name= 'id_curso' class="form-control"
-                ng-model="aluno.id_endereco">
+                ng-model="aluno.id_curso">
             </div>
 
             <!-- Botões -->
-            <input type= 'reset' name='limpar' value= 'Limpar' 
+            <input type= 'reset' name='limpar' value= 'Limpar'
               class="btn btn-secondary btn-lg btn-block">
             <button ng-click="cadastrar()"
               class="btn btn-dark btn-lg btn-block">

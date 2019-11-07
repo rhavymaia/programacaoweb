@@ -16,14 +16,27 @@ var homeController = function($scope) {
 app.controller('HomeController', homeController);
 
 // Aluno - Controller
-var alunoController = function($scope) {
+var alunoController = function($scope, alunoApi) {
 
   $scope.aluno = {};
+  let aluno = $scope.aluno;
 
   $scope.cadastrar = function() {
+    alunoApi.cadastrar(aluno)
+      .then(function(response) {
+        console.log("Requisição enviada e recebida com sucesso");
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log("Houve um problema na requisição");
+        console.error(error);
+      });
+    /*
     alunoApi.cadastrar($scope.aluno)
       .then(function(response) {})
       .catch(function(error) {});
+    */
+
   }
 }
 
@@ -32,14 +45,24 @@ app.controller('AlunoController', alunoController);
 // Aluno - Factory
 var alunoFactory = function($http) {
 
-  var baseUrl = "localhost:5000";
+  var baseUrl = "http://127.0.0.1:5000";
 
   var _cadastrar = function(aluno) {
     return $http.post(baseUrl + "/aluno", aluno);
   };
 
+  var _listar = function() {
+    return $http.get(baseUrl + "/alunos");
+  };
+
+  var _pesquisarPorId = function(id) {
+    return $http.get(baseUrl + "/alunos/" + encodeURI(id));
+  };
+
   return {
-    cadastrar: _cadastrar
+    cadastrar: _cadastrar,
+    listar: _listar,
+    pesquisarPorId: _pesquisarPorId
   };
 }
 
