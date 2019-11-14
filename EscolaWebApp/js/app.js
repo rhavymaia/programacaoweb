@@ -1,6 +1,6 @@
 // Inicializar o módulo.
 let nomeApp = 'EscolaWebApp';
-let modulos = ["ngMessages"];
+let modulos = ['ngMaterial', 'ngMessages'];
 var app = angular.module(nomeApp, modulos);
 
 // Estrutura básica para uma função no controlador.
@@ -16,27 +16,38 @@ var homeController = function($scope) {
 app.controller('HomeController', homeController);
 
 // Aluno - Controller
-var alunoController = function($scope, alunoApi) {
+var alunoController = function($scope, $mdToast, alunoApi) {
 
   $scope.aluno = {};
   let aluno = $scope.aluno;
 
   $scope.cadastrar = function() {
+    // Converter formato da data: brazilian -> american.
+    var data = moment(aluno.nascimento, "DD/MM/YYYY");
+    aluno.nascimento = data.format("YYYY-MM-DD");
+
     alunoApi.cadastrar(aluno)
       .then(function(response) {
-        console.log("Requisição enviada e recebida com sucesso");
-        console.log(response);
+        var toast = $mdToast.simple()
+            .textContent('O aluno foi cadastrado com sucesso!')
+            .position('top right')
+            .action('OK')
+            .hideDelay(6000);
+        $mdToast.show(toast);
+
+        delete $scope.aluno;
+        $scope.aluno = {};
+        $scope.alunoForm.$setPristine();
+        $scope.alunoForm.$setUntouched();
       })
       .catch(function(error) {
-        console.log("Houve um problema na requisição");
-        console.error(error);
+        var toast = $mdToast.simple()
+            .textContent('Algum problema ocorreu no envio dos dados.')
+            .position('top right')
+            .action('OK')
+            .hideDelay(6000);
+        $mdToast.show(toast);
       });
-    /*
-    alunoApi.cadastrar($scope.aluno)
-      .then(function(response) {})
-      .catch(function(error) {});
-    */
-
   }
 }
 
