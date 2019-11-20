@@ -1,138 +1,131 @@
 <!DOCTYPE html>
 <html ng-app="EscolaWebApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Página Inicial</title>
-    <link rel="shortcut icon" href="img/ifpb.png">
 
-    <!-- Estilo -->
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/menu.css">
+<head>
+  <meta charset="utf-8">
+  <title>Página Inicial</title>
+  <link rel="shortcut icon" href="img/ifpb.png">
 
-    <!-- AngularJs -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <!-- Estilo -->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
 
-    <!-- Angular Material -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+  <!-- AngularJs -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
 
-    <!-- Moments -->
-    <script src="https://momentjs.com/downloads/moment.js"></script>
+  <!-- Angular Material -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Moments -->
+  <script src="https://momentjs.com/downloads/moment.js"></script>
 
-    <!-- EscolaWebApp - Aplicação Angular -->
-    <script src="js/app.js" type="text/javascript"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  </head>
-  <body>
-    <div class="meu-container">
-      <header>
-        <h2 class="logo">
-          LOGO
-        </h2>
-        <nav>
-          <ul class="navigation">
-            <li><a href="campus.html">Campus</a></li>
-            <li><a href="aluno.html">Aluno</a></li>
-            <li><a href="#">Curso</a></li>
-            <li><a href="#">Disciplina</a></li>
-            <li><a href="escola.html">Escola</a></li>
-            <li><a href="#">Turma</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main ng-controller="AlunoController">
-        <!-- Aluno - Formulário -->
-        <form name="alunoForm">
-            <div class="form-group">
+  <!-- EscolaWebApp - Aplicação Angular -->
+  <script src="js/app.js" type="text/javascript"></script>
 
-              <!-- Nome -->
-              <label for= 'nome'> Nome: </label>
-              <input type = 'text' name = 'nome' class="form-control"
-                ng-model="aluno.nome"
-                required ng-minlength="3"
-                ng-maxlength="25">
-              <div>
-                <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty"
-                  class="alert alert-danger">
-                  Por favor, preencha o campo nome!
-                </div>
-                <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty"
-                  class="alert alert-danger">
-                  Por favor, o Nome não tem o tamanho mínimo válido!
-                </div>
-                <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty"
-                  class="alert alert-danger">
-                  Por favor, o Nome não tem o tamanho máximo válido!
-                </div>
-              </div>
+</head>
+
+<body>
+  <div class="meu-container">
+    <header>
+      <h2 class="logo">
+        LOGO
+      </h2>
+      <nav>
+        <ul class="navigation">
+          <li><a href="campus.html">Campus</a></li>
+          <li><a href="aluno.html">Aluno</a></li>
+          <li><a href="#">Curso</a></li>
+          <li><a href="#">Disciplina</a></li>
+          <li><a href="escola.html">Escola</a></li>
+          <li><a href="#">Turma</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main ng-controller="AlunoController">
+      <!-- Aluno - Formulário -->
+      <form name="alunoForm">
+        <p>Pristine form: {{alunoForm.$pristine}}</p>
+        <p>Aluno (untouched): {{alunoForm.nome.$untouched}}</p>
+        <p>Aluno (valid):{{alunoForm.nome.$valid}}</p>
+        <div class="form-group">
+          <!-- Nome -->
+          <label for='nome'> Nome: </label>
+          <input type='text' name='nome' class="form-control" ng-model="aluno.nome"
+            ng-required="true" ng-minlength="3" ng-maxlength="25">
+          <div>
+            <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty" class="alert alert-danger">
+              Por favor, preencha o campo nome!
             </div>
-
-            <!-- Matrícula -->
-            <div class="form-group">
-              <label for= 'matricula'> Matrícula:</label>
-              <input type= 'text' name= 'matricula' class="form-control"
-                ng-model="aluno.matricula" required ng-minlength="12">
-              <div ng-messages="alunoForm.matricula.$error" ng-if='alunoForm.matricula.$dirty'>
-                <div ng-message="required" class="alert alert-danger">
-                  Por favor, preencha o campo Matrícula!
-                </div>
-                <div ng-message="minlength" class="alert alert-danger">
-                  Por favor, a Matrícula não tem o tamanho mínimo válido!
-                </div>
-              </div>
+            <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
+              Por favor, o Nome não tem o tamanho mínimo válido!
             </div>
-
-            <!-- CPF -->
-            <div class="form-group">
-              <label for= 'cpf'> CPF:</label>
-              <input type= 'text' name= 'cpf' class="form-control"
-                ng-model="aluno.cpf">
+            <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty" class="alert alert-danger">
+              Por favor, o Nome não tem o tamanho máximo válido!
             </div>
+          </div>
+        </div>
 
-            <!-- Nascimento -->
-            <div class="form-group">
-              <label for= 'nascimento'> Nascimento:</label>
-              <input type= 'date' name= 'nascimento' class="form-control"
-                ng-model="aluno.nascimento">
+        <!-- Matrícula -->
+        <div class="form-group">
+          <label for='matricula'> Matrícula:</label>
+          <input type='text' name='matricula' class="form-control" ng-model="aluno.matricula" ng-required="true" ng-minlength="12">
+          <div ng-messages="alunoForm.matricula.$error" ng-if='alunoForm.matricula.$dirty'>
+            <div ng-message="required" class="alert alert-danger">
+              Por favor, preencha o campo Matrícula!
             </div>
-
-            <!-- Endereço -->
-            <div class="form-group">
-              <label for= 'id_endereço'> Número de Identificação do Endereço:</label>
-              <input type= 'text' name= 'id_endereco' class="form-control"
-                ng-model="aluno.id_endereco">
+            <div ng-message="minlength" class="alert alert-danger">
+              Por favor, a Matrícula não tem o tamanho mínimo válido!
             </div>
+          </div>
+        </div>
 
-            <!-- Curso -->
-            <div class="form-group">
-              <label for= 'id_curso'> Número de Identificação do Curso:</label>
-              <input type= 'text' name= 'id_curso' class="form-control"
-                ng-model="aluno.id_curso">
-            </div>
+        <!-- CPF -->
+        <div class="form-group">
+          <label for='cpf'> CPF:</label>
+          <input type='text' name='cpf' class="form-control" ng-model="aluno.cpf">
+        </div>
 
-            <!-- Botões -->
-            <input type= 'reset' name='limpar' value= 'Limpar'
-              class="btn btn-secondary btn-lg btn-block">
-            <button ng-click="cadastrar()"
-              class="btn btn-dark btn-lg btn-block">
-              Cadastrar</button>
-        </form>
-      </main>
-      <footer>
-        Rodapé
-      </footer>
-    </div>
-  </body>
+        <!-- Nascimento -->
+        <div class="form-group">
+          <label for='nascimento'> Nascimento:</label>
+          <input type='date' name='nascimento' class="form-control" ng-model="aluno.nascimento">
+        </div>
+
+        <!-- Endereço -->
+        <div class="form-group">
+          <label for='id_endereço'> Número de Identificação do Endereço:</label>
+          <input type='text' name='id_endereco' class="form-control" ng-model="aluno.id_endereco">
+        </div>
+
+        <!-- Curso -->
+        <div class="form-group">
+          <label for='id_curso'> Número de Identificação do Curso:</label>
+          <input type='text' name='id_curso' class="form-control" ng-model="aluno.id_curso">
+        </div>
+
+        <!-- Botões -->
+        <button type='reset' name='limpar' class="btn btn-secondary btn-lg btn-block">
+          Limpar
+        </button>
+        <button ng-click="cadastrar()" class="btn btn-dark btn-lg btn-block">
+          Cadastrar
+        </button>
+      </form>
+    </main>
+    <footer>
+      Rodapé
+    </footer>
+  </div>
+</body>
+
 </html>
