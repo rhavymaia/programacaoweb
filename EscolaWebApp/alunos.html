@@ -1,0 +1,31 @@
+listar escolas
+
+
+<!-- Aluno - Formulário -->
+<form name="alunoForm">
+  <div class="form-group">
+    <!-- Nome -->
+    <label for='nome'> Nome: </label>
+    <input type='text' name='nome' class="form-control" ng-model="aluno.nome"
+      ng-required="true" ng-minlength="3" ng-maxlength="25">
+    <div>
+      <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty" class="alert alert-danger">
+        Por favor, preencha o campo nome!
+      </div>
+      <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
+        Por favor, o Nome não tem o tamanho mínimo válido!
+      </div>
+      <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty" class="alert alert-danger">
+        Por favor, o Nome não tem o tamanho máximo válido!
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões -->
+  <button type='reset' name='limpar' class="btn btn-secondary btn-lg btn-block">
+    Limpar
+  </button>
+  <button ng-click="cadastrar()" class="btn btn-dark btn-lg btn-block">
+    Listar
+  </button>
+</form>

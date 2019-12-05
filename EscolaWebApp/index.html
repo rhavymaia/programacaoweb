@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Página Inicial</title>
+  <title>{{$state.current.title}}</title>
   <link rel="shortcut icon" href="img/ifpb.png">
 
   <!-- Estilo -->
@@ -35,9 +35,11 @@
   <!-- EscolaWebApp - Aplicação Angular -->
   <script src="js/app.js" type="text/javascript"></script>
   <script src="js/controller/AlunoController.js" type="text/javascript"></script>
+  <script src="js/controller/AlunosController.js" type="text/javascript"></script>
   <script src="js/controller/HomeController.js" type="text/javascript"></script>
   <script src="js/factory/AlunoApi.js" type="text/javascript"></script>
   <script src="js/router/router.js" type="text/javascript"></script>
+  <script src="js/router/state.js" type="text/javascript"></script>
 
 </head>
 
@@ -49,17 +51,18 @@
       </h2>
       <nav>
         <ul class="navigation">
-          <li><a href="campus.html">Campus</a></li>
-          <li><a href="aluno.html">Aluno</a></li>
+          <li><a ui-sref="home">Home</a></li>
+          <li><a ui-sref="aluno">Aluno</a></li>
+          <li><a href="#">Campus</a></li>
           <li><a href="#">Curso</a></li>
           <li><a href="#">Disciplina</a></li>
-          <li><a href="escola.html">Escola</a></li>
+          <li><a href="#">Escola</a></li>
           <li><a href="#">Turma</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <ng-view></ng-view>
+      <ui-view></ui-view>
     </main>
     <footer>
       Rodapé

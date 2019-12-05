@@ -12,14 +12,4 @@ app.config(function ($routeProvider, $locationProvider) {
     // Verificar o modelo utilizado para o $stateProvider presente no state.js que é diferente.
     // Não esquecer de importar no index o script state.js .
     // Mudar no index.html o atributo ng-view para o ui-view.
-    $routeProvider
-      .when('/', {
-        templateUrl : 'home.html',
-        controller  : 'HomeController'
-      })
-      .when('/aluno', {
-        templateUrl : 'aluno.html',
-        controller  : 'AlunoController'
-      })
-    .otherwise({redirectTo: '/'});
 });
