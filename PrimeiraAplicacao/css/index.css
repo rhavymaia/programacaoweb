@@ -1,0 +1,65 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonte */
+body {
+  font-family: arial, verdana, sans-serif;
+  font-size: 16px;
+}
+
+/* Menu */
+ul.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: deepskyblue;
+  list-style: none;
+}
+
+ul.menu li a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: white;
+}
+
+ul.menu li a:hover{
+  background-color: #1565C0;
+}
+
+/* Container principal */
+div.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header, main, footer {
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Conteúdo */
+p {
+  color: rgb(28,28,28);
+  /*background-color: rgba(192, 192, 192, 0.5);*/
+  padding: 10px;
+  padding-top: 0;
+  margin: 10px 5px 10px 5px;
+}
+
+h1 {
+  color: rgb(15,73,163);
+}
+
+h2, span {
+  color: rgb(240,163,10);
+}
+
+span {
+  color: green;
+}
