@@ -1,112 +1,138 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Café</title>
-    <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/index.css">
+<head>
+  <title>Café</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/index.css">
 
-  </head>
-  <body>
-    <div>
-      <header>
-        <nav>
-          <ul class="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Produtos</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contatos</a></li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <div class="jumbotron text-center">
-          <h1 class="vermelho">
-            Título vermelho
-          </h1>
-          <p>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Material Design Bootstrap
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+  -->
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">Empresa</a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#" class="nav-link">Produtos</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contato</a></li>
+        <li class="nav-item"><a href="variedades/cotacao.html" class="nav-link">Cotação</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- main -->
+  <main>
+    <div class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="imagem/ruben-ramirez-xhKG01FN2uk-unsplash.jpg" alt="Primeiro Slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="imagem/peter-pivak-Iiqo64hiwZo-unsplash.jpg" alt="Segundo Slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+      </a>
+    </div>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron text-right">
+      <h1>Café</h1>
+      <p class="lead">Concentre-se apenas no café.</p>
+      <a href="#" class="btn btn-primary">Cadastrar</a>
+    </div>
+
+    <!-- Seções -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-1 col-md-4">
+          <h2>Sub-seção 1</h2>
+          <p class="vermelho">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip.
+            <a href="#">Outro link fora do menu!</a>
+          </p>
+        </div>
+        <div class="col-sm-1 col-md-4">
+          <h2>Sub-seção 2</h2>
+          <p class="vermelho">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore
             magna aliqua. Ut enim ad minim veniam, quis nostrud
             exercitation ullamco laboris nisi ut aliquip.
           </p>
         </div>
-
-        <div class="container">
-            <div class="row">
-              <div class="col-sm-1 col-md-4">
-                <h2>Sub-seção 1</h2>
-                <p class="vermelho">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
-              <div class="col-sm-1 col-md-4">
-                <h2>Sub-seção 2</h2>
-                <p class="vermelho">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
-              <div class="col-sm-1 col-md-4">
-                <h2>Sub-seção 3</h2>
-                <p class="vermelho">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-1 col-md-3">
-                <h2>Sub-seção 1</h2>
-                <p class="vermelho">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
-              <div class="col-sm-1 col-md-6">
-                <h2>Sub-seção 2</h2>
-                <p class="vermelho">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
-              <div class="col-sm-1 col-md-3">
-                <h2>Sub-seção 3</h2>
-                <p class="vermelho">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                  sed do eiusmod tempor incididunt ut labore et dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip.
-                </p>
-              </div>
-            </div>
+        <div class="col-sm-1 col-md-4">
+          <h2>Sub-seção 3</h2>
+          <p class="vermelho">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip.
+          </p>
         </div>
-
-      </main>
-      <footer>
-        Rodapé
-      </footer>
+      </div>
     </div>
-  </body>
+  </main>
+  <!-- footer - MDB -->
+  <footer class="page-footer font-small special-color-dark pt-4">
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+            repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+            harum esse fugiat. Itaque, culpa?</p>
+        </div>
+        <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <!-- Grid column -->
+        <div class="col-md-6 mb-md-0 mb-3">
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
+            commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
+            excepturi hic.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+    </div>
+  </footer>
+</body>
+
 </html>
