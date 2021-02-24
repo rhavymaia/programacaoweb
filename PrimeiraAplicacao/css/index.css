@@ -11,26 +11,6 @@ body {
 }
 
 /* Menu */
-ul.menu {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  background-color: deepskyblue;
-  list-style: none;
-}
-
-ul.menu li a {
-  text-decoration: none;
-  display: block;
-  padding: 1em;
-  color: white;
-}
-
-ul.menu li a:hover{
-  background-color: #1565C0;
-}
 
 /* Container principal */
 div.container {
