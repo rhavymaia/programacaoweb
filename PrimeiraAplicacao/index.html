@@ -35,9 +35,18 @@
     let matriculado = true;
 
     // Estrutura de condição com if
-    if (idade == 18){
-      // comandos
+    if (idade >= 18){
+      // condição verdadeira
       console.log("Você é maior de idade.");
+    } else {
+      // condição falsa
+      console.log("Você é menor de idade.");
+
+      if (idade >= 2 && idade <=10) {
+        console.log("e também é criança.")
+      } else if (idade > 0) {
+        console.log("e também é bebê.")
+      }
     }
 
   </script>
