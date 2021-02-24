@@ -34,7 +34,14 @@
 
     let matriculado = true;
 
-    // Estrutura de condição com if
+    // Estrutura de condição composto
+    if (matriculado == true) {
+      console.log("Aluno(a) está matriculado(a)")
+    } else {
+      console.log("Aluno(a) não está matriculado(a)")
+    }
+
+    // Estrutura de condição com if composto, aninhado e encadeado.
     if (idade >= 18){
       // condição verdadeira
       console.log("Você é maior de idade.");
@@ -48,6 +55,41 @@
         console.log("e também é bebê.")
       }
     }
+    // Estruturas de repetiçãoptimize
+    // while
+    let i = 1;
+    while (i <= 10) {
+      // comandos
+      console.log(i);
+      i++;
+    }
+
+    // for
+    console.log("for");
+    for (let j = 1; j <= 10; j++) {
+      // comandos
+      console.log(j);
+    }
+
+    let frutas = ["banana", "manga", "jaca", "maçã"];
+    for (let indice in frutas){
+      console.log(indice);
+    }
+
+    for (let fruta of frutas){
+      console.log(fruta);
+    }
+
+    // Objeto - JSON
+    let pessoa = {
+      "idade": 18,
+      "peso": 60,
+      "altura": 1.80,
+      "falar": function (){
+        console.log("Estou falando!");
+      }
+    };
+    pessoa.falar();
 
   </script>
 </head>
