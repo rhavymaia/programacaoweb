@@ -1,0 +1,45 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fonte */
+body {
+  font-family: arial, verdana, sans-serif;
+  font-size: 16px;
+}
+
+/* Menu */
+
+/* Container principal */
+div.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header, main, footer {
+  padding: 10px;
+  margin: 10px;
+}
+
+/* Conteúdo */
+p {
+  color: rgb(28,28,28);
+  /*background-color: rgba(192, 192, 192, 0.5);*/
+  padding: 10px;
+  padding-top: 0;
+  margin: 10px 5px 10px 5px;
+}
+
+h1 {
+  color: rgb(15,73,163);
+}
+
+h2, span {
+  color: rgb(240,163,10);
+}
+
+span {
+  color: green;
+}
