@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <title>Comprar seu café!</title>
+</head>
+
+<body>
+  <div>
+    <p>Quantidade Total:
+      <span id="total">
+      </span>
+    </p>
+    <p>Preço: <span id="preco"></span></p>
+    <button type="button" name="comprar" id="comprar">Comprar</button>
+  </div>
+  <script type="text/javascript">
+    let total = document.getElementById("total");
+    let preco = document.getElementById("preco");
+    let comprar = document.getElementById("comprar");
+
+    let contador = 0;
+
+    function atualizarValores(contador) {
+      total.innerText = contador;
+      preco.innerText = contador * 100;
+    }
+
+    atualizarValores(0);
+
+    let comprarClick = function () {
+      contador = contador + 1;
+      atualizarValores(contador);
+    }
+
+    comprar.addEventListener("click", comprarClick);
+  </script>
+</body>
+
+</html>
