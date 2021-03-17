@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="AppDaw">
+  <head>
+    <meta charset="utf-8">
+    <title>Minha página com AngularJS</title>
+    <!-- AngularJS -->
+    <script type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js">
+    </script>
+
+    <script type="text/javascript">
+      var app = angular.module("AppDaw", []);
+    </script>
+  </head>
+  <body>
+    <h1 class="">Minha página tem AngularJS</h1>
+    <form>
+      <label for="">Nome:</label>
+      <input type="text" name="usuario" ng-model="usuario">
+
+      <label for="">Idade:</label>
+      <input type="number" name="idade" ng-model="idade">
+    </form>
+    <h2>Olá, {{usuario}}</h2>
+    <p>Sua idade é <span>{{idade}}</span> </p>
+  </body>
+</html>
