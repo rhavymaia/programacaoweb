@@ -9,19 +9,49 @@
     </script>
 
     <script type="text/javascript">
+      // Módulo da aplicação AngularJS.
       var app = angular.module("AppDaw", []);
+
+      // Função que será definida como controladora.
+      let adicionarUsuario = function($scope) {
+        $scope.nome;
+        $scope.idade;
+        // Lista de usuários.
+        $scope.usuarios = [];
+
+        $scope.adicionar = function() {
+          console.log("Adicionando um usuário");
+          // Json
+          let usuario = {
+            "nome": $scope.nome,
+            "idade": $scope.idade
+          }
+          // Adicionar elementos na lista.
+          $scope.usuarios.push(usuario);
+          console.log($scope.usuarios);
+        }
+      }
+      // Criação do controlador.
+      app.controller("AdicionarUsuarioController", adicionarUsuario);
     </script>
   </head>
   <body>
     <h1 class="">Minha página tem AngularJS</h1>
-    <form>
-      <label for="">Nome:</label>
-      <input type="text" name="usuario" ng-model="usuario">
+    <div ng-controller="AdicionarUsuarioController as adicionarUsuarioCtrl">
+      <form>
+        <label for="">Nome:</label>
+        <input type="text" name="nome" ng-model="nome">
 
-      <label for="">Idade:</label>
-      <input type="number" name="idade" ng-model="idade">
-    </form>
-    <h2>Olá, {{usuario}}</h2>
-    <p>Sua idade é <span>{{idade}}</span> </p>
+        <label for="">Idade:</label>
+        <input type="number" name="idade" ng-model="idade">
+
+        <button type="button" name="adicionar"
+          ng-click="adicionar()">Adicionar</button>
+      </form>
+      <ul>
+        <!-- Iterar elementos de usuarios nos itens da lista -->
+        <li ng-repeat="usuario in usuarios">Nome: {{usuario.nome}}, Idade: {{usuario.idade}}</li>
+      </ul>
+    </div>
   </body>
 </html>
