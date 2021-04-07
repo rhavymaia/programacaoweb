@@ -64,7 +64,7 @@ let somar = function(n1, n2) {
   return resultado;
 }
 
-let somar = (n1, n2) => n1 + n2;
+somar = (n1, n2) => n1 + n2;
 
 function exibirMensagemConsole(mensagem, qtdExibicoes, andar) {
   andar(); // Função passada como parâmetro.
