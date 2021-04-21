@@ -1,9 +1,12 @@
 import dataset from './model/dataset.js';
+import food from './model/food.js';
 
-for (const item of dataset) {
+food.load(dataset);
+let foods = food.readAll();
+
+for (const item of foods) {
   const itensDiv = document.getElementById('itens');
   const cardHTML = addItem(item);
-  console.log(cardHTML);
   itensDiv.insertAdjacentHTML('beforeend', cardHTML);
 }
 
