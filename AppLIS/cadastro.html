@@ -34,36 +34,37 @@
   </header>
   <!-- main -->
   <main>
+
     <form action="#" method="post">
       <div class="form-group row">
         <!-- Nome do usuário -->
-        <label for="nomeUsuario" class="col-4 col-form-label">Nome do usuário:</label>
-        <input type="text" class="form-control col-6" name="nomeUsuario">
-        <small class="form-text text-muted col-2">Coloque seu nome completo.</small>
+        <label for="nomeUsuario" class="col-2 col-form-label">Nome:</label>
+        <input type="text" class="form-control col-10" name="nomeUsuario" id="nomeUsuario">
+        <!-- small class="form-text text-muted col-2">Coloque seu nome completo.</small -->
       </div>
 
       <div class="form-group row">
         <!-- E-mail -->
-        <label for="email" class="col-4 col-form-label">E-mail:</label>
-        <input type="email" class="form-control col-6" name="email">
+        <label for="email" class="col-2 col-form-label">E-mail:</label>
+        <input type="email" class="form-control col-10" name="email" id="email">
       </div>
 
       <div class="form-group row">
         <!-- Senha -->
-        <label for="senha" class="col-4 col-form-label">Senha:</label>
-        <input type="password" class="form-control col-6" name="senha">
+        <label for="senha" class="col-2 col-form-label">Senha:</label>
+        <input type="password" class="form-control col-10" name="senha" id="senha">
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <!-- re-senha -->
-        <label for="resenha">Re-Senha:</label>
-        <input type="password" class="form-control" name="resenha">
+        <label for="resenha"  class="col-2 col-form-label">Re-Senha:</label>
+        <input type="password" class="form-control col-10" name="resenha" id="resenha">
       </div>
 
-      <div class="form-group">
+      <div class="form-group row">
         <!-- Cidade -->
-        <label for="cidade">Cidade:</label>
-        <select name="cidade" class="form-control">
+        <label for="cidade" class="col-2 col-form-label">Cidade:</label>
+        <select name="cidade" class="form-control col-1" id="cidade">
           <option value="gba">Guarabira</option>
           <option value="jpa">João Pessoa</option>
           <option value="mri">Mari</option>
@@ -72,15 +73,55 @@
       </div>
 
       <div class="form-group">
-          <input type="text" class="form-control" placeholder="Seu bairro" readonly>
-      </div>
-
-      <div class="form-group">
         <!-- Descrever o motivo do cadastro -->
         <label for="descricao">Descreva o motivo do cadastro:</label>
         <textarea name="descricao" class="form-control" rows="8" cols="80"></textarea>
       </div>
+
+      <button type="button" class="btn btn-primary btn-lg btn-block" name="adicionar"
+      id="adicionar">
+        Adicionar
+      </button>
     </form>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover" id="usuarios">
+        <caption>Usuários cadastrados.</caption>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript">
+      let nomeUsuarioInput = document.querySelector("input#nomeUsuario");
+      nomeUsuarioInput = document.getElementById("nomeUsuario");
+      const emailInput = document.getElementById("email");
+      const adicionarButton = document.getElementById("adicionar");
+      const usuariosTable = document.getElementById("usuarios");
+
+      let adicionar = function() {
+        console.log("Clicando no botão adicionar");
+        let nomeUsuario = nomeUsuarioInput.value;
+        let email = emailInput.value;
+
+        var usuariosTable = document.getElementById("usuarios");
+        let linha = usuariosTable.insertRow(1);
+        let celula1 = linha.insertCell(0);
+        let celula2 = linha.insertCell(1);
+        celula1.innerHTML = nomeUsuario;
+        celula2.innerHTML = email;
+      }
+
+      adicionarButton.onclick = adicionar;
+      adicionarButton.addEventListener("click", adicionar);
+
+    </script>
   </main>
   <!-- footer - MDB -->
   <footer class="page-footer font-small special-color-dark pt-4">
