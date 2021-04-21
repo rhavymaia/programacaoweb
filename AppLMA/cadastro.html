@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <h1>Cadastro do usuário</h1>
+    <h2>O cadastro permitirá que você realize compras de café.</h2>
+
+    <form action="">
+      <label for="nomeUsuario">Nome:</label>
+      <input type="text" name="nomeUsuario" required
+        minlength="3"  maxlength="80"/>
+
+      <label for="emailUsuario">E-mail</label>
+      <input type="email" name="emailUsuario" required>
+
+      <label for="nascimentoUsuario">Nascimento: </label>
+      <input type="date" name="nascimentoUsuario" required>
+
+      <label for="genero">Gênero: </label>
+      <input type="radio" name="genero" value="m"> Masculino
+      <input type="radio" name="genero" value="f"> Feminino
+      <input type="radio" name="genero" value="o"> Outro
+
+      <label for="">Modalidade de trabalho: </label>
+      <input type="checkbox" name="modalidadeTrabalho" value=""> Remoto
+      <input type="checkbox" name="modalidadeTrabalho" value=""> Presencial
+
+      <label for="senhaUsuario">Senha</label>
+      <input type="password" name="senhaUsuario" required>
+
+      <select name="estado">
+        <option value=""></option>
+        <option value="pb">
+          Paraíba
+        </option>
+        <option value="pe">
+          Pernambuco
+        </option>
+        <option value="rn">
+          Rio Grande do Norte
+        </option>
+      </select>
+
+      <select name="cidade">
+        <option value="gba">Guarabira</option>
+        <option value="gba">João Pessoa</option>
+      </select>
+
+      <textarea name="observacao" rows="8" cols="80"></textarea>
+
+      <input type="submit" name="enviar" value="Cadastrar">
+
+    </form>
+
+  </body>
+</html>
