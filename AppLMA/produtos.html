@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Minha página com CSS</title>
+
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <header>
+      Logotipo do sistema
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+  		  <li>
+  			<a href="cadastro.html">Cadastrar</a>
+  		  </li>
+  		</ul>
+    </nav>
+    <main>
+      <h1>Aula sobre tabelas.</h1>
+      <h2>Tabela 1</h2>
+      <p>Meu texto!</p>
+      <table border="1">
+        <caption>Legenda da tabela que o significado dos dados.</caption>
+        <thead>
+          <!-- tr = table row -->
+          <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Endereço</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>João da Silva</td>
+            <td>js@gmail.com</td>
+            <td>Rua nova</td>
+          </tr>
+          <tr>
+            <td>Maria da Silva</td>
+            <td>ms@gmail.com</td>
+            <td>Rua nova</td>
+          </tr>
+          <tr>
+            <td>José da Silva</td>
+            <td>js@gmail.com</td>
+            <td>Rua nova</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Tabela 2</h2>
+      <table border="1">
+        <tr>
+          <td>Produto</td>
+          <td>Preço</td>
+        </tr>
+        <tr>
+          <td>Televisão</td>
+          <td>500</td>
+        </tr>
+        <tr>
+          <td>Mesa</td>
+          <td>1000</td>
+        </tr>
+        <tr>
+          <td colspan="2">Total</td>
+        </tr>
+      </table>
+
+      <h2>Tabela 3</h2>
+      <table border="1">
+        <tr>
+          <td>Produto</td>
+          <td>Preço</td>
+          <td>Total</td>
+        </tr>
+        <tr>
+          <td>TV</td>
+          <td>500</td>
+          <td rowspan="2">1500</td>
+        </tr>
+        <tr>
+          <td>Mesa</td>
+          <td>1000</td>
+        </tr>
+      </table>
+    </main>
+    <footer>
+      <span>Desenvolvido por Ladoss</span>
+    </footer>
+  </body>
+</html>
